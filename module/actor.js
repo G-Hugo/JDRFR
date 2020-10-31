@@ -72,6 +72,48 @@ export class SimpleActor extends Actor {
       }
     }
 
+    //Skill TN Calculation
+    for (var skill in data.skills) {
+      if (data.skills[skill].characteristic == "str") {
+        data.skills[skill].tn = data.skills[skill].bonus + data.characteristics.str.value;
+      } else if (data.skills[skill].characteristic == "end") {
+        data.skills[skill].tn = data.skills[skill].bonus + data.characteristics.end.value;
+      } else if (data.skills[skill].characteristic == "agi") {
+        data.skills[skill].tn = data.skills[skill].bonus + data.characteristics.agi.value;
+      } else if (data.skills[skill].characteristic == "int") {
+        data.skills[skill].tn = data.skills[skill].bonus + data.characteristics.int.value;
+      } else if (data.skills[skill].characteristic == "wp") {
+        data.skills[skill].tn = data.skills[skill].bonus + data.characteristics.wp.value;
+      } else if (data.skills[skill].characteristic == "prc") {
+        data.skills[skill].tn = data.skills[skill].bonus + data.characteristics.prc.value;
+      } else if (data.skills[skill].characteristic == "prs") {
+        data.skills[skill].tn = data.skills[skill].bonus + data.characteristics.prs.value;
+      } else if (data.skills[skill].characteristic == "lck") {
+        data.skills[skill].tn = data.skills[skill].bonus + data.characteristics.lck.value;
+      }
+    }
+
+    //Magic Skill TN Calculation
+    for (var skill in data.magic_skills) {
+      if (data.magic_skills[skill].characteristic == "str") {
+        data.magic_skills[skill].tn = data.magic_skills[skill].bonus + data.characteristics.str.value;
+      } else if (data.magic_skills[skill].characteristic == "end") {
+        data.magic_skills[skill].tn = data.magic_skills[skill].bonus + data.characteristics.end.value;
+      } else if (data.magic_skills[skill].characteristic == "agi") {
+        data.magic_skills[skill].tn = data.magic_skills[skill].bonus + data.characteristics.agi.value;
+      } else if (data.magic_skills[skill].characteristic == "int") {
+        data.magic_skills[skill].tn = data.magic_skills[skill].bonus + data.characteristics.int.value;
+      } else if (data.magic_skills[skill].characteristic == "wp") {
+        data.magic_skills[skill].tn = data.magic_skills[skill].bonus + data.characteristics.wp.value;
+      } else if (data.magic_skills[skill].characteristic == "prc") {
+        data.magic_skills[skill].tn = data.magic_skills[skill].bonus + data.characteristics.prc.value;
+      } else if (data.magic_skills[skill].characteristic == "prs") {
+        data.magic_skills[skill].tn = data.magic_skills[skill].bonus + data.characteristics.prs.value;
+      } else if (data.magic_skills[skill].characteristic == "lck") {
+        data.magic_skills[skill].tn = data.magic_skills[skill].bonus + data.characteristics.lck.value;
+      }
+    }
+
     //Combat Style Skill Bonus Calculation
     for (var skill in data.combat_styles) {
       if (data.combat_styles[skill].rank == "untrained") {
@@ -88,6 +130,27 @@ export class SimpleActor extends Actor {
         data.combat_styles[skill].bonus = 40;
       } else if (data.combat_styles[skill].rank == "master") {
         data.combat_styles[skill].bonus = 50;
+      }
+    }
+
+    // Combat Skill TN Calculation
+    for (var skill in data.combat_styles) {
+      if (data.combat_styles[skill].characteristic == "str") {
+        data.combat_styles[skill].tn = data.combat_styles[skill].bonus + data.characteristics.str.value;
+      } else if (data.combat_styles[skill].characteristic == "end") {
+        data.combat_styles[skill].tn = data.combat_styles[skill].bonus + data.characteristics.end.value;
+      } else if (data.combat_styles[skill].characteristic == "agi") {
+        data.combat_styles[skill].tn = data.combat_styles[skill].bonus + data.characteristics.agi.value;
+      } else if (data.combat_styles[skill].characteristic == "int") {
+        data.combat_styles[skill].tn = data.combat_styles[skill].bonus + data.characteristics.int.value;
+      } else if (data.combat_styles[skill].characteristic == "wp") {
+        data.combat_styles[skill].tn = data.combat_styles[skill].bonus + data.characteristics.wp.value;
+      } else if (data.combat_styles[skill].characteristic == "prc") {
+        data.combat_styles[skill].tn = data.combat_styles[skill].bonus + data.characteristics.prc.value;
+      } else if (data.combat_styles[skill].characteristic == "prs") {
+        data.combat_styles[skill].tn = data.combat_styles[skill].bonus + data.characteristics.prs.value;
+      } else if (data.combat_styles[skill].characteristic == "lck") {
+        data.combat_styles[skill].tn = data.combat_styles[skill].bonus + data.characteristics.lck.value;
       }
     }
 

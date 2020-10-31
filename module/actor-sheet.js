@@ -104,5 +104,25 @@ export class SimpleActorSheet extends ActorSheet {
       li.slideUp(200, () => this.render(false));
     });
 
+    // Skill Roll Buttons
+    html.find('.acrobatics-roll').click(this._skillRoll.bind(this))
+
   }
+
+  /**
+   * Handle clickable rolls.
+   * @param {Event} event   The originating click event
+   * @private
+   */
+
+  _skillRoll(event) {
+    event.preventDefault()
+    const roll = new roll("1d100");
+    roll.roll();
+
+    const content = `Attempts an Acrobatics Roll!`
+
+    roll.toMessage ({type: 4, user: Gamepad.user._id, speaker: ChatMessage.getSpeaker(), content: content});
+  }
+
 }

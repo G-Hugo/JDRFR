@@ -32,35 +32,43 @@
     "characteristics": {
       "str": {
         "value": 0,
-        "favored": false
+        "favored": false,
+        "name": "STR"
       },
       "end": {
         "value": 0,
-        "favored": false
+        "favored": false,
+        "name": "END"
       },
       "agi": {
         "value": 0,
-        "favored": false
+        "favored": false,
+        "name": "AGI"
       },
       "int": {
         "value": 0,
-        "favored": false
+        "favored": false,
+        "name": "INT"
       },
       "wp": {
         "value": 0,
-        "favored": false
+        "favored": false,
+        "name": "WP"
       },
       "prc": {
         "value": 0,
-        "favored": false
+        "favored": false,
+        "name": "PRC"
       },
       "prs": {
         "value": 0,
-        "favored": false
+        "favored": false,
+        "name": "PRS"
       },
       "lck": {
         "value": 0,
-        "favored": false
+        "favored": false,
+        "name": "LCK"
       }
     },
     "hp": {
@@ -159,144 +167,200 @@
       "acrobatics": {
         "rank": "",
         "bonus": 0,
-        "specialization": ""
+        "specialization": "",
+        "characteristic": "",
+        "tn": 0
       },
       "athletics": {
         "rank":"",
         "bonus": 0,
-        "specialization": ""
+        "specialization": "",
+        "characteristic": "",
+        "tn": 0
       },
       "command": {
         "rank": "",
         "bonus": 0,
-        "specialization": ""
+        "specialization": "",
+        "characteristic": "",
+        "tn": 0
       },
       "commerce": {
         "rank": "",
         "bonus": 0,
-        "specialization": ""
+        "specialization": "",
+        "characteristic": "",
+        "tn": 0
       },
       "deceive": {
         "rank": "",
         "bonus": 0,
-        "specialization": ""
+        "specialization": "",
+        "characteristic": "",
+        "tn": 0
       },
       "evade": {
         "rank": "",
         "bonus": 0,
-        "specialization": ""
+        "specialization": "",
+        "characteristic": "",
+        "tn": 0
       },
       "investigate": {
         "rank": "",
         "bonus": 0,
-        "specialization": ""
+        "specialization": "",
+        "characteristic": "",
+        "tn": 0
       },
       "logic": {
         "rank": "",
         "bonus": 0,
-        "specialization": ""
+        "specialization": "",
+        "characteristic": "",
+        "tn": 0
       },
       "lore": {
         "rank": "",
         "bonus": 0,
-        "specialization": ""
+        "specialization": "",
+        "characteristic": "",
+        "tn": 0
       },
       "navigate": {
         "rank": "",
         "bonus": 0,
-        "specialization": ""
+        "specialization": "",
+        "characteristic": "",
+        "tn": 0
       },
       "observe": {
         "rank": "",
         "bonus": 0,
-        "specialization": ""
+        "specialization": "",
+        "characteristic": "",
+        "tn": 0
       },
       "persuade": {
         "rank": "",
         "bonus": 0,
-        "specialization": ""
+        "specialization": "",
+        "characteristic": "",
+        "tn": 0
       },
       "profession1": {
         "rank": "", 
         "bonus": 0,
-        "specialization": ""
+        "specialization": "",
+        "characteristic": "",
+        "tn": 0
       },
       "profession2": {
         "rank": "", 
         "bonus": 0,
-        "specialization": ""
+        "specialization": "",
+        "characteristic": "",
+        "tn": 0
       },
       "profession3": {
         "rank": "", 
         "bonus": 0,
-        "specialization": ""
+        "specialization": "",
+        "characteristic": "",
+        "tn": 0
       },
       "ride": {
         "rank": "",
         "bonus": 0,
-        "specialization": ""
+        "specialization": "",
+        "characteristic": "",
+        "tn": 0
       },
       "stealth": {
         "rank": "",
         "bonus": 0,
-        "specialization": ""
+        "specialization": "",
+        "characteristic": "",
+        "tn": 0
       },
       "subterfuge": {
         "rank": "",
         "bonus": 0,
-        "specialization": ""
+        "specialization": "",
+        "characteristic": "",
+        "tn": 0
       },
       "survival": {
         "rank": "",
         "bonus": 0,
-        "specialization": ""
+        "specialization": "",
+        "characteristic": "",
+        "tn": 0
       }
     },
     "magic_skills": {
       "alchemy": {
         "rank": "",
         "bonus": 0,
-        "specialization": ""
+        "specialization": "",
+        "characteristic": "",
+        "tn": 0
       },
       "alteration": {
         "rank": "",
         "bonus": 0,
-        "specialization": ""
+        "specialization": "",
+        "characteristic": "",
+        "tn": 0
       },
       "conjuration": {
         "rank": "",
         "bonus": 0,
-        "specialization": ""
+        "specialization": "",
+        "characteristic": "",
+        "tn": 0
       },
       "destruction": {
         "rank": "",
         "bonus": 0,
-        "specialization": ""
+        "specialization": "",
+        "characteristic": "",
+        "tn": 0
       },
       "enchant": {
         "rank": "",
         "bonus": 0,
-        "specialization": ""
+        "specialization": "",
+        "characteristic": "",
+        "tn": 0
       },
       "illusion": {
         "rank": "",
         "bonus": 0,
-        "specialization": ""
+        "specialization": "",
+        "characteristic": "",
+        "tn": 0
       },
       "mysticism": {
         "rank": "",
         "bonus": 0,
-        "specialization": ""
+        "specialization": "",
+        "characteristic": "",
+        "tn": 0
       },
       "restoration": {
         "rank": "",
         "bonus": 0,
-        "specialization": ""
+        "specialization": "",
+        "characteristic": "",
+        "tn": 0
       },
       "necromancy": {
         "rank": "",
         "bonus": 0,
-        "specialization": ""
+        "specialization": "",
+        "characteristic": "",
+        "tn": 0
       }
     },
     "talents": "",
@@ -308,18 +372,24 @@
         "name": "",
         "rank": 0,
         "bonus": 0,
+        "tn": 0,
+        "characteristic": "",
         "weapons": ""
       },
       "cs2": {
         "name": "",
         "rank": 0,
         "bonus": 0,
+        "tn": 0,
+        "characteristic": "",
         "weapons": ""
       },
       "cs3": {
         "name": "",
         "rank": 0,
         "bonus": 0,
+        "tn": 0,
+        "characteristic": "",
         "weapons": ""
     }
     },
