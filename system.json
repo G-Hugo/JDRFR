@@ -1,7 +1,7 @@
 {
   "name": "uesrpg-d100",
-  "title": "UESRPG d100",
-  "description": "A system based off of Atropos Worldbuilding system used to play the UESRPG d100 system.",
+  "title": "Modif UESRPG d100",
+  "description": "Une version modif de UESRPG",
   "version": 1.26,
   "minimumCoreVersion": "0.5.6",
   "compatibleCoreVersion": "0.7.9",
