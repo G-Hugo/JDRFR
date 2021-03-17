@@ -58,12 +58,7 @@
       "str": {
         "value": 0,
         "favored": false,
-        "name": "STR"
-      },
-      "end": {
-        "value": 0,
-        "favored": false,
-        "name": "END"
+        "name": "For"
       },
       "agi": {
         "value": 0,
@@ -75,25 +70,16 @@
         "favored": false,
         "name": "INT"
       },
-      "wp": {
-        "value": 0,
-        "favored": false,
-        "name": "WP"
-      },
+
       "prc": {
         "value": 0,
         "favored": false,
-        "name": "PRC"
-      },
-      "prs": {
-        "value": 0,
-        "favored": false,
-        "name": "PRS"
+        "name": "PER"
       },
       "lck": {
         "value": 0,
         "favored": false,
-        "name": "LCK"
+        "name": "SOC"
       }
     },
     "hp": {
