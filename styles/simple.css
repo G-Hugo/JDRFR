@@ -75,8 +75,8 @@
 .worldbuilding .resource-hp {
   background: firebrick;
   border-radius: 50%;
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   text-align: center;
   font-size: x-large;
   color: white;
@@ -85,8 +85,8 @@
 .worldbuilding .resource-hp-max {
   background:firebrick;
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   text-align: center;
   font-size: larger;
   color: white;

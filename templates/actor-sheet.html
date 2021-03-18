@@ -6,7 +6,7 @@
         <div class="header-fields">
             <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="Name"/></h1>
             <div class="resources">
-                <label class="resource-label">VIE</label><p>
+                <label class="resource-label">Point de vie</label><p>
                 <input class="resource-hp" type="text" name="data.hp.value" value="{{data.hp.value}}" data-dtype="Number"/>
                 <span>-</span>
                 <input class="resource-hp-max" type="text" name="data.hp.max" value="{{data.hp.max}}" data-dtype="Number"/>
@@ -17,6 +17,8 @@
     {{!-- Sheet Tab Navigation --}}
     <nav class="sheet-tabs tabs" data-group="primary">
         <a class="item" data-tab="core">Information</a>
+        <a class="item" data-tab="passif">Passif</a>
+        <a class="item" data-tab="magie">Magie</a>
         <a class="item" data-tab="journal">Inventaire</a>
         <a class="item" data-tab="items">Equipment</a>
     </nav>
@@ -105,7 +107,19 @@
         
 
         {{!-- Talents Tab --}}
-        
+        {{!-- Passif Tab --}}
+        <div class="tab passif" data-group="primary" data-tab="passif">
+            <div>
+            {{editor content=data.passif target="data.passif" button=true owner=owner editable=editable}}
+            </div>
+        </div>
+
+        {{!-- Magie Tab --}}
+        <div class="tab magie" data-group="primary" data-tab="magie">
+            <div>
+            {{editor content=data.magie target="data.magie" button=true owner=owner editable=editable}}
+            </div>
+        </div>
 
         {{!-- Journal Tab --}}
         <div class="tab journal" data-group="primary" data-tab="journal">
