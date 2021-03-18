@@ -33,7 +33,7 @@ Hooks.once("init", async function() {
 
   // Register sheet application classes
   Actors.unregisterSheet("core", ActorSheet);
-  Actors.registerSheet("core", ActorSheet);
+  Actors.registerSheet("uesrpg-d100", SimpleActorSheet);
   Items.unregisterSheet("core", ItemSheet);
   Items.registerSheet("uesrpg-d100", SimpleItemSheet, {types: ["item", "armor", "weapon", "spell", "trait", "talent", "power", "combatStyle", "ammunition"], makeDefault: true});
   Actors.registerSheet("uesrpg-d100", npcSheet, {types: ["npc"], makeDefault: true});
