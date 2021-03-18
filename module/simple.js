@@ -33,10 +33,10 @@ Hooks.once("init", async function() {
 
   // Register sheet application classes
   Actors.unregisterSheet("core", ActorSheet);
-  Actors.registerSheet("uesrpg-d100", SimpleActorSheet);
+  Actors.registerSheet("uesrpg-d100-modifie", SimpleActorSheet, {types: ["character"], makeDefault: true});
   Items.unregisterSheet("core", ItemSheet);
-  Items.registerSheet("uesrpg-d100", SimpleItemSheet, {types: ["item", "armor", "weapon", "spell", "trait", "talent", "power", "combatStyle", "ammunition"], makeDefault: true});
-  Actors.registerSheet("uesrpg-d100", npcSheet, {types: ["npc"], makeDefault: true});
+  Items.registerSheet("uesrpg-d100-modifie", SimpleItemSheet, {types: ["item", "armor", "weapon", "spell", "trait", "talent", "power", "combatStyle", "ammunition"], makeDefault: true});
+  Actors.registerSheet("uesrpg-d100-modifie", npcSheet, {types: ["npc"], makeDefault: true});
 
   // Register system settings
   game.settings.register("uesrpg-d100", "legacyUntrainedPenalty", {
