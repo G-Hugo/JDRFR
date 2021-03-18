@@ -983,13 +983,13 @@
     "templates": {
       "characteristicArray": {
         "characteristics": {
-          "str": "STR",
+          "str": "FOR",
           "end": "END",
           "agi": "AGI",
           "int": "INT",
           "wp": "WP",
-          "prc": "PRC",
-          "prs": "PRS",
+          "prc": "PER",
+          "prs": "SOC",
           "lck": "LCK"
         }
       },
