@@ -16,12 +16,8 @@
 
     {{!-- Sheet Tab Navigation --}}
     <nav class="sheet-tabs tabs" data-group="primary">
-        <a class="item" data-tab="core">Core</a>
-        <a class="item" data-tab="skills">Skills</a>
-        <a class="item" data-tab="combat">Combat</a>
-        <a class="item" data-tab="spells">Spells</a>
-        <a class="item" data-tab="talents">Talents</a>
-        <a class="item" data-tab="journal">Journal</a>
+        <a class="item" data-tab="core">Info</a>
+        <a class="item" data-tab="journal">Inventaire</a>
         <a class="item" data-tab="items">Equipment</a>
     </nav>
 
@@ -33,11 +29,11 @@
             <div>
             <table class="core-sidebar1">
                 <tr>
-                    <th colspan="3" class="combat_table_header">Characteristics</th>
+                    <th colspan="3" class="combat_table_header">Stats</th>
                 </tr>
                 <tr>
                     <td><input type="checkbox" name="data.characteristics.str.favored" {{checked data.characteristics.str.favored}}></td>
-                    <th><input type="button" class="characteristic-roll" name="FOR" id="str" value="STR"></th>
+                    <th><input type="button" class="characteristic-roll" name="STR" id="str" value="FOR"></th>
                     <td><input name="data.characteristics.str.value" type="text" value="{{data.characteristics.str.value}}" data-dtype="Number"></td>
                 </tr>
                 <tr>
@@ -52,12 +48,12 @@
                 </tr>
                 <tr>
                     <td><input type="checkbox" name="data.characteristics.prc.favored" {{checked data.characteristics.prc.favored}}></td>
-                    <th><input type="button" class="characteristic-roll" name="PER" id="prc" value="PRC"></th>
+                    <th><input type="button" class="characteristic-roll" name="PRC" id="prc" value="PER"></th>
                     <td><input name="data.characteristics.prc.value" type="text" value="{{data.characteristics.prc.value}}" data-dtype="Number"></td>
                 </tr>
                 <tr>
                     <td><input type="checkbox" name="data.characteristics.prs.favored" {{checked data.characteristics.prs.favored}}></td>
-                    <th><input type="button" class="characteristic-roll" name="SOC" id="prs" value="PRS"></th>
+                    <th><input type="button" class="characteristic-roll" name="PRS" id="prs" value="SOC"></th>
                     <td><input name="data.characteristics.prs.value" type="text" value="{{data.characteristics.prs.value}}" data-dtype="Number"></td>
                 </tr>
             </table>
@@ -66,7 +62,7 @@
                 <table>
                     <tr>
                         <th>Race</th>
-                        <th>Birthsign</th>
+                        <th>Date de naissance</th>
                         <th>Current XP</th>
                         <th>Total XP</th>
                     </tr>
@@ -99,7 +95,7 @@
                     </tr>
                 </table>
                 <div>
-                    <h2 class="bioHeader">Biography - Languages</h2>
+                    <h2 class="bioHeader">Biography - Langages</h2>
                     {{editor content=data.bio target="data.bio" button=true owner=owner editable=editable}}
                 </div>
             </div>
