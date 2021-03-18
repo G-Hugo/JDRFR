@@ -189,10 +189,10 @@ export class SimpleActorSheet extends ActorSheet {
     let wounded_char = this.actor.data.data.characteristics[element.id].value - 20
 
     let d = new Dialog({
-      title: "Apply Roll Modifier",
+      title: "Ajout modifieur",
       content: `<form>
                   <div class="dialogForm">
-                  <label><b>${element.name} Modifier: </b></label><input placeholder="ex. -20, +10" id="playerInput" value="0" style=" text-align: center; width: 50%; border-style: groove; float: right;" type="text"></input></div>
+                  <label><b>${element.name} Modifieur: </b></label><input placeholder="ex. -20, +10" id="playerInput" value="0" style=" text-align: center; width: 50%; border-style: groove; float: right;" type="text"></input></div>
                 </form>`,
       buttons: {
         one: {
@@ -208,7 +208,7 @@ export class SimpleActorSheet extends ActorSheet {
           const content = `Jet de <b>${element.name}</b>!
           <p></p><b>Stat actuelle: [[${wounded_char} + ${playerInput}]]</b> <p></p>
           <b>Resultat: [[${roll.total}]]</b><p></p>
-          <span style='color:green; font-size:120%;'> <b>REUSSITE CRITIQUE !</b></span>`
+          <span style='font-size:120%;' class="rainbow"> <b>REUSSITE CRITIQUE !</b></span>`
           roll.toMessage({type: 4, user: game.user._id, speaker: ChatMessage.getSpeaker(), content: content});
     
         } else if (roll.total >= 96) {
@@ -230,7 +230,7 @@ export class SimpleActorSheet extends ActorSheet {
         const content = `Jet de <b>${element.name}</b>!
         <p></p><b>Stat actuelle: [[${this.actor.data.data.characteristics[element.id].value} + ${playerInput}]]</b> <p></p>
         <b>Resultat: [[${roll.total}]]</b><p></p>
-        <span style='color:green; font-size:120%;'> <b>REUSSITE CRITIQUE !</b></span>`
+        <span style='font-size:120%;' class="rainbow"> <b>REUSSITE CRITIQUE !</b></span>`
         roll.toMessage({type: 4, user: game.user._id, speaker: ChatMessage.getSpeaker(), content: content});
 
       } else if (roll.total >= 96) {
@@ -266,10 +266,10 @@ export class SimpleActorSheet extends ActorSheet {
   const element = event.currentTarget
   
   let d = new Dialog({
-    title: "Apply Roll Modifier",
+    title: "Ajout modifieur",
     content: `<form>
                 <div class="dialogForm">
-                <label><b>${element.name} Modifier: </b></label><input placeholder="ex. -20, +10" id="playerInput" value="0" style=" text-align: center; width: 50%; border-style: groove; float: right;" type="text"></input></div>
+                <label><b>${element.name} Modifieur: </b></label><input placeholder="ex. -20, +10" id="playerInput" value="0" style=" text-align: center; width: 50%; border-style: groove; float: right;" type="text"></input></div>
               </form>`,
     buttons: {
       one: {
@@ -283,7 +283,7 @@ export class SimpleActorSheet extends ActorSheet {
             const content = `Jet de <b>${element.name}</b>!
             <p></p><b>Stat actuelle: [[${this.actor.data.data.skills[element.id].tn}]]</b> <p></p>
             <b>Resultat: [[${roll.total}]]</b><p></p>
-            <span style='color:green; font-size:120%;'> <b>REUSSITE CRITIQUE !</b></span>`
+            <span style='font-size:120%;' class="rainbow"> <b>REUSSITE CRITIQUE !</b></span>`
         
             roll.toMessage({type: 4, user: game.user._id, speaker: ChatMessage.getSpeaker(), content: content});
         
@@ -321,10 +321,10 @@ export class SimpleActorSheet extends ActorSheet {
     const element = event.currentTarget
 
     let d = new Dialog({
-      title: "Apply Roll Modifier",
+      title: "Ajout modifieur",
       content: `<form>
                   <div class="dialogForm">
-                  <label><b>${element.name} Modifier: </b></label><input placeholder="ex. -20, +10" id="playerInput" value="0" style=" text-align: center; width: 50%; border-style: groove; float: right;" type="text"></input></div>
+                  <label><b>${element.name} Modifieur: </b></label><input placeholder="ex. -20, +10" id="playerInput" value="0" style=" text-align: center; width: 50%; border-style: groove; float: right;" type="text"></input></div>
                 </form>`,
       buttons: {
         one: {
@@ -339,7 +339,7 @@ export class SimpleActorSheet extends ActorSheet {
           const content = `Jet de <b>${element.name}</b>!
           <p></p><b>Stat actuelle: [[${this.actor.data.data.magic_skills[element.id].tn} + ${playerInput}]]</b> <p></p>
           <b>Resultat: [[${roll.total}]]</b><p></p>
-          <span style='color:green; font-size:120%;'> <b>REUSSITE CRITIQUE !</b></span>`
+          <span style='font-size:120%;' class="rainbow"> <b>REUSSITE CRITIQUE !</b></span>`
           roll.toMessage({type: 4, user: game.user._id, speaker: ChatMessage.getSpeaker(), content: content});
 
         } else if (roll.total >= 96) {
@@ -416,10 +416,10 @@ export class SimpleActorSheet extends ActorSheet {
     const item = this.actor.getOwnedItem(li.data("itemId"));
 
     let d = new Dialog({
-      title: "Apply Roll Modifier",
+      title: "Ajout modifieur",
       content: `<form>
                   <div class="dialogForm">
-                  <label><b>${item.name} Modifier: </b></label><input placeholder="ex. -20, +10" id="playerInput" value="0" style=" text-align: center; width: 50%; border-style: groove; float: right;" type="text"></input></div>
+                  <label><b>${item.name} Modifieur: </b></label><input placeholder="ex. -20, +10" id="playerInput" value="0" style=" text-align: center; width: 50%; border-style: groove; float: right;" type="text"></input></div>
                 </form>`,
       buttons: {
         one: {
@@ -434,7 +434,7 @@ export class SimpleActorSheet extends ActorSheet {
             const content = `Rolls Combat Style <b>${item.name}</b>!
             <p></p><b>Stat actuelle: [[${item.data.data.value} + ${playerInput}]]</b> <p></p>
             <b>Resultat: [[${roll.total}]]</b><p></p>
-            <span style='color:green; font-size:120%;'> <b>REUSSITE CRITIQUE !</b></span>`
+            <span style='font-size:120%;' class="rainbow"> <b>REUSSITE CRITIQUE !</b></span>`
             roll.toMessage({type: 4, user: game.user._id, speaker: ChatMessage.getSpeaker(), content: content});
 
           } else if (roll.total >= 96) {
@@ -478,10 +478,10 @@ export class SimpleActorSheet extends ActorSheet {
     const element = event.currentTarget
 
     let d = new Dialog({
-      title: "Apply Roll Modifier",
+      title: "Ajout modifieur",
       content: `<form>
                   <div class="dialogForm">
-                  <label><b>${element.name} Resistance Modifier: </b></label><input placeholder="ex. -20, +10" id="playerInput" value="0" style=" text-align: center; width: 50%; border-style: groove; float: right;" type="text"></input></div>
+                  <label><b>${element.name} Resistance Modifieur: </b></label><input placeholder="ex. -20, +10" id="playerInput" value="0" style=" text-align: center; width: 50%; border-style: groove; float: right;" type="text"></input></div>
                 </form>`,
       buttons: {
         one: {
@@ -496,7 +496,7 @@ export class SimpleActorSheet extends ActorSheet {
             const content = `Rolls Resistance for <b>${element.name}</b>!
             <p></p><b>Stat actuelle: [[${this.actor.data.data.resistance[element.id]} + ${playerInput}]]</b> <p></p>
             <b>Resultat: [[${roll.total}]]</b><p></p>
-            <span style='color:green; font-size:120%;'> <b>REUSSITE CRITIQUE !</b></span>`
+            <span style='font-size:120%;' class="rainbow"> <b>REUSSITE CRITIQUE !</b></span>`
             roll.toMessage({type: 4, user: game.user._id, speaker: ChatMessage.getSpeaker(), content: content});
 
           } else if (roll.total >= 96) {

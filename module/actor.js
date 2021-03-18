@@ -25,12 +25,15 @@ export class SimpleActor extends Actor {
 
     //Characteristic Bonuses
     var strBonus = Math.floor(data.characteristics.str.value / 10);
+    var forBonus = Math.floor(data.characteristics.for.value / 10);
     var endBonus = Math.floor(data.characteristics.end.value / 10);
     var agiBonus = Math.floor(data.characteristics.agi.value / 10);
     var intBonus = Math.floor(data.characteristics.int.value / 10);
     var wpBonus = Math.floor(data.characteristics.wp.value / 10);
     var prcBonus = Math.floor(data.characteristics.prc.value / 10);
+    var perBonus = Math.floor(data.characteristics.per.value / 10);
     var prsBonus = Math.floor(data.characteristics.prs.value / 10);
+    var socBonus = Math.floor(data.characteristics.soc.value / 10);
     var lckBonus = Math.floor(data.characteristics.lck.value / 10);
 
     //Skill Bonus Calculation
@@ -157,6 +160,8 @@ export class SimpleActor extends Actor {
     for (var skill in data.skills) {
       if (data.skills[skill].characteristic == "str") {
         data.skills[skill].tn = data.characteristics.str.value + data.skills[skill].bonus;
+      } else if (data.skills[skill].characteristic == "for") {
+        data.skills[skill].tn = data.characteristics.for.value + data.skills[skill].bonus;
       } else if (data.skills[skill].characteristic == "end") {
         data.skills[skill].tn = data.characteristics.end.value + data.skills[skill].bonus;
       } else if (data.skills[skill].characteristic == "agi") {
@@ -167,8 +172,12 @@ export class SimpleActor extends Actor {
         data.skills[skill].tn = data.characteristics.wp.value + data.skills[skill].bonus;
       } else if (data.skills[skill].characteristic == "prc") {
         data.skills[skill].tn = data.characteristics.prc.value + data.skills[skill].bonus;
+      } else if (data.skills[skill].characteristic == "per") {
+        data.skills[skill].tn = data.characteristics.per.value + data.skills[skill].bonus;
       } else if (data.skills[skill].characteristic == "prs") {
         data.skills[skill].tn = data.characteristics.prs.value + data.skills[skill].bonus;
+      } else if (data.skills[skill].characteristic == "soc") {
+        data.skills[skill].tn = data.characteristics.soc.value + data.skills[skill].bonus;
       } else if (data.skills[skill].characteristic == "lck") {
         data.skills[skill].tn = data.characteristics.lck.value + data.skills[skill].bonus;
       }
@@ -178,6 +187,8 @@ export class SimpleActor extends Actor {
     for (var skill in data.magic_skills) {
       if (data.magic_skills[skill].characteristic == "str") {
         data.magic_skills[skill].tn = data.characteristics.str.value + data.magic_skills[skill].bonus;
+      } else if (data.magic_skills[skill].characteristic == "for") {
+        data.magic_skills[skill].tn = data.characteristics.for.value + data.magic_skills[skill].bonus;
       } else if (data.magic_skills[skill].characteristic == "end") {
         data.magic_skills[skill].tn = data.characteristics.end.value + data.magic_skills[skill].bonus;
       } else if (data.magic_skills[skill].characteristic == "agi") {
@@ -188,8 +199,12 @@ export class SimpleActor extends Actor {
         data.magic_skills[skill].tn = data.characteristics.wp.value + data.magic_skills[skill].bonus;
       } else if (data.magic_skills[skill].characteristic == "prc") {
         data.magic_skills[skill].tn = data.characteristics.prc.value + data.magic_skills[skill].bonus;
+      } else if (data.magic_skills[skill].characteristic == "per") {
+        data.magic_skills[skill].tn = data.characteristics.per.value + data.magic_skills[skill].bonus;
       } else if (data.magic_skills[skill].characteristic == "prs") {
         data.magic_skills[skill].tn = data.characteristics.prs.value + data.magic_skills[skill].bonus;
+      } else if (data.magic_skills[skill].characteristic == "soc") {
+        data.magic_skills[skill].tn = data.characteristics.end.value + data.magic_skills[skill].bonus;
       } else if (data.magic_skills[skill].characteristic == "lck") {
         data.magic_skills[skill].tn = data.characteristics.lck.value + data.magic_skills[skill].bonus;
       }
@@ -199,6 +214,8 @@ export class SimpleActor extends Actor {
     for (var skill in data.combat_styles) {
       if (data.combat_styles[skill].characteristic == "str") {
         data.combat_styles[skill].tn = data.characteristics.str.value + data.combat_styles[skill].bonus;
+      } else if (data.combat_styles[skill].characteristic == "for") {
+        data.combat_styles[skill].tn = data.characteristics.for.value + data.combat_styles[skill].bonus;
       } else if (data.combat_styles[skill].characteristic == "end") {
         data.combat_styles[skill].tn = data.characteristics.end.value + data.combat_styles[skill].bonus;
       } else if (data.combat_styles[skill].characteristic == "agi") {
@@ -209,8 +226,12 @@ export class SimpleActor extends Actor {
         data.combat_styles[skill].tn = data.characteristics.wp.value + data.combat_styles[skill].bonus;
       } else if (data.combat_styles[skill].characteristic == "prc") {
         data.combat_styles[skill].tn = data.characteristics.prc.value + data.combat_styles[skill].bonus;
+      } else if (data.combat_styles[skill].characteristic == "per") {
+        data.combat_styles[skill].tn = data.characteristics.per.value + data.combat_styles[skill].bonus;
       } else if (data.combat_styles[skill].characteristic == "prs") {
         data.combat_styles[skill].tn = data.characteristics.prs.value + data.combat_styles[skill].bonus;
+      } else if (data.combat_styles[skill].characteristic == "soc") {
+        data.combat_styles[skill].tn = data.characteristics.soc.value + data.combat_styles[skill].bonus;
       } else if (data.combat_styles[skill].characteristic == "lck") {
         data.combat_styles[skill].tn = data.characteristics.lck.value + data.combat_styles[skill].bonus;
       }
@@ -527,12 +548,15 @@ export class SimpleActor extends Actor {
 
     //Characteristic Bonuses
     var strBonus = Math.floor(data.characteristics.str.value / 10);
+    var forBonus = Math.floor(data.characteristics.for.value / 10);
     var endBonus = Math.floor(data.characteristics.end.value / 10);
     var agiBonus = Math.floor(data.characteristics.agi.value / 10);
     var intBonus = Math.floor(data.characteristics.int.value / 10);
     var wpBonus = Math.floor(data.characteristics.wp.value / 10);
     var prcBonus = Math.floor(data.characteristics.prc.value / 10);
+    var perBonus = Math.floor(data.characteristics.per.value / 10);
     var prsBonus = Math.floor(data.characteristics.prs.value / 10);
+    var socBonus = Math.floor(data.characteristics.soc.value / 10);
     var lckBonus = Math.floor(data.characteristics.lck.value / 10);
 
     //Talent/Power/Trait Bonuses
@@ -1181,6 +1205,8 @@ export class SimpleActor extends Actor {
         if (item.data.replace.ini.iniToggle == true) {
           if (item.data.replace.ini.characteristic == "str") {
             init = Math.floor(actorData.data.characteristics.str.value / 10) * 3;
+          } else if (item.data.replace.ini.characteristic == "for") {
+            init = Math.floor(actorData.data.characteristics.for.value / 10) * 3;
           } else if (item.data.replace.ini.characteristic == "end") {
             init = Math.floor(actorData.data.characteristics.end.value / 10) * 3;
           } else if (item.data.replace.ini.characteristic == "agi") {
@@ -1191,8 +1217,12 @@ export class SimpleActor extends Actor {
             init = Math.floor(actorData.data.characteristics.wp.value / 10) * 3;
           } else if (item.data.replace.ini.characteristic == "prc") {
             init = Math.floor(actorData.data.characteristics.prc.value / 10) * 3;
+          } else if (item.data.replace.ini.characteristic == "per") {
+            init = Math.floor(actorData.data.characteristics.per.value / 10) * 3;
           } else if (item.data.replace.ini.characteristic == "prs") {
             init = Math.floor(actorData.data.characteristics.prs.value / 10) * 3;
+          } else if (item.data.replace.ini.characteristic == "soc") {
+            init = Math.floor(actorData.data.characteristics.soc.value / 10) * 3;
           } else if (item.data.replace.ini.characteristic == "lck") {
             init = Math.floor(actorData.data.characteristics.lck.value / 10) * 3;
           }
@@ -1208,6 +1238,8 @@ export class SimpleActor extends Actor {
         if (item.data.replace.wt.wtToggle == true) {
           if (item.data.replace.wt.characteristic == "str") {
             wound = Math.floor(actorData.data.characteristics.str.value / 10) * 3;
+          } else if (item.data.replace.wt.characteristic == "for") {
+            wound = Math.floor(actorData.data.characteristics.for.value / 10) * 3;
           } else if (item.data.replace.wt.characteristic == "end") {
             wound = Math.floor(actorData.data.characteristics.end.value / 10) * 3;
           } else if (item.data.replace.wt.characteristic == "agi") {
@@ -1218,8 +1250,12 @@ export class SimpleActor extends Actor {
             wound = Math.floor(actorData.data.characteristics.wp.value / 10) * 3;
           } else if (item.data.replace.wt.characteristic == "prc") {
             wound = Math.floor(actorData.data.characteristics.prc.value / 10) * 3;
+          } else if (item.data.replace.wt.characteristic == "per") {
+            wound = Math.floor(actorData.data.characteristics.per.value / 10) * 3;
           } else if (item.data.replace.wt.characteristic == "prs") {
             wound = Math.floor(actorData.data.characteristics.prs.value / 10) * 3;
+          } else if (item.data.replace.wt.characteristic == "soc") {
+            wound = Math.floor(actorData.data.characteristics.soc.value / 10) * 3;
           } else if (item.data.replace.wt.characteristic == "lck") {
             wound = Math.floor(actorData.data.characteristics.lck.value / 10) * 3;
           }

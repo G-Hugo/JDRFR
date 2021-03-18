@@ -652,10 +652,15 @@
           "value": 0,
           "favored": false
         },
+        "for": {
+          "value": 0,
+          "favored": false
+        },
         "end": {
           "value": 0,
           "favored": false
         },
+        
         "agi": {
           "value": 0,
           "favored": false
@@ -672,7 +677,15 @@
           "value": 0,
           "favored": false
         },
+        "per": {
+          "value": 0,
+          "favored": false
+        },
         "prs": {
+          "value": 0,
+          "favored": false
+        },
+        "soc": {
           "value": 0,
           "favored": false
         },
@@ -983,13 +996,16 @@
     "templates": {
       "characteristicArray": {
         "characteristics": {
-          "str": "FOR",
+          "str": "STR",
+          "for": "FOR",
           "end": "END",
           "agi": "AGI",
           "int": "INT",
           "wp": "WP",
-          "prc": "PER",
-          "prs": "SOC",
+          "prc": "PRC",
+          "per": "PER",
+          "prs": "PRS",
+          "soc": "SOC",
           "lck": "LCK"
         }
       },
