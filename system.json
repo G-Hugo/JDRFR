@@ -2,7 +2,7 @@
   "name": "uesrpg-d100-modifie",
   "title": "Modif UESRPG d100",
   "description": "Une version modif de UESRPG",
-  "version": 0.1,
+  "version": 0.2,
   "minimumCoreVersion": "0.5.6",
   "compatibleCoreVersion": "0.7.9",
   "templateVersion": 2,
@@ -13,7 +13,7 @@
     {
       "name": "items-uesrpg",
       "label": "Items",
-      "system": "uesrpg-d100",
+      "system": "uesrpg-d100-modifie",
       "path": "./packs/items-uesrpg.db",
       "entity": "Item"
     },
@@ -22,89 +22,89 @@
       "entity": "Actor",
       "name": "scroll-of-people",
       "path": "packs/scroll-of-people.db",
-      "system": "uesrpg-d100"
+      "system": "uesrpg-d100-modifie"
     },
     {
       "label": "Scroll of Beasts",
       "entity": "Actor",
       "name": "scroll-of-beasts",
       "path": "packs/scroll-of-beasts.db",
-      "system": "uesrpg-d100"
+      "system": "uesrpg-d100-modifie"
     },
     {
       "label": "Scroll of Oblivion",
       "entity": "Actor",
       "name": "scroll-of-oblivion",
       "path": "packs/scroll-of-oblivion.db",
-      "system": "uesrpg-d100"
+      "system": "uesrpg-d100-modifie"
     },
     {
       "label": "Scroll of Dwemer",
       "entity": "Actor",
       "name": "scroll-of-dwemer",
       "path": "packs/scroll-of-dwemer.db",
-      "system": "uesrpg-d100"
+      "system": "uesrpg-d100-modifie"
     },
     {
       "label": "Scroll of Undeath",
       "entity": "Actor",
       "name": "scroll-of-undeath",
       "path": "packs/scroll-of-undeath.db",
-      "system": "uesrpg-d100"
+      "system": "uesrpg-d100-modifie"
     },
     {
       "name": "spells",
       "label": "Spells",
-      "system": "uesrpg-d100",
+      "system": "uesrpg-d100-modifie",
       "path": "./packs/spells.db",
       "entity": "Item"
     },
     {
       "name": "roll-tables",
       "label": "Loot Tables",
-      "system": "uesrpg-d100",
+      "system": "uesrpg-d100-modifie",
       "path": "./packs/roll-tables.db",
       "entity": "RollTable"
     },
     {
       "name": "macros",
       "label": "Macros",
-      "system": "uesrpg-d100",
+      "system": "uesrpg-d100-modifie",
       "path": "./packs/macros.db",
       "entity": "Macro"
     },
     {
       "name": "powers",
       "label": "Powers",
-      "system": "uesrpg-d100",
+      "system": "uesrpg-d100-modifie",
       "path": "./packs/powers.db",
       "entity": "Item"
     },
     {
       "name": "traits",
       "label": "Traits",
-      "system": "uesrpg-d100",
+      "system": "uesrpg-d100-modifie",
       "path": "./packs/traits.db",
       "entity": "Item"
     },
     {
       "name": "talents",
       "label": "Talents",
-      "system": "uesrpg-d100",
+      "system": "uesrpg-d100-modifie",
       "path": "./packs/talents.db",
       "entity": "Item"
     },
     {
       "name": "npc-build-reference",
       "label": "NPC Build Reference",
-      "system": "uesrpg-d100",
+      "system": "uesrpg-d100-modifie",
       "path": "./packs/npc-build-reference.db",
       "entity": "Item"
     },
     {
       "name": "uesrpg-3e-reference",
       "label": "Reference Journals",
-      "system": "uesrpg-d100",
+      "system": "uesrpg-d100-modifie",
       "path": "./packs/uesrpg-3e-reference.db",
       "entity": "JournalEntry"
     }
