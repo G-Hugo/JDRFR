@@ -8,7 +8,7 @@ export class SimpleActorSheet extends ActorSheet {
 	static get defaultOptions() {
 	  return mergeObject(super.defaultOptions, {
   	  classes: ["worldbuilding", "sheet", "actor"],
-  	  template: "systems/uesrpg-d100/templates/actor-sheet.html",
+  	  template: "systems/uesrpg-d100-modifie/templates/actor-sheet.html",
       width: 600,
       height: 600,
       tabs: [{navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "description"}],
