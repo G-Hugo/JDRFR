@@ -1007,13 +1007,11 @@
       "characteristicArray": {
         "characteristics": {
           "str": "STR",
-          "end": "END",
           "agi": "AGI",
           "int": "INT",
-          "wp": "WP",
           "prc": "PRC",
-          "prs": "PRS",
-          "lck": "LCK"
+          "wp": "SOC"
+          
         }
       },
       "replaceAttributesArray": {
