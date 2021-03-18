@@ -77,8 +77,8 @@
                 </table>
                 <table>
                     <tr>
-                        <th colspan="5">Réussite critique</th>
-                        <th colspan="7">Echec critique</th>
+                        <th colspan="1">Réussite critique</th>
+                        <th colspan="3">Echec critique</th>
                     </tr>
                     <tr>
                         <tr class="field-inputs">
@@ -109,6 +109,7 @@
         {{!-- Talents Tab --}}
         {{!-- Passif Tab --}}
         <div class="tab passif" data-group="primary" data-tab="passif">
+            <label class="resource-label">Mettez ici tous vos bonus passifs</label><p></p>
             <div>
             {{editor content=data.passif target="data.passif" button=true owner=owner editable=editable}}
             </div>
@@ -116,6 +117,7 @@
 
         {{!-- Magie Tab --}}
         <div class="tab magie" data-group="primary" data-tab="magie">
+            <label class="resource-label">Mettez ici tous vos sorts</label><p></p>
             <div>
             {{editor content=data.magie target="data.magie" button=true owner=owner editable=editable}}
             </div>
@@ -123,6 +125,7 @@
 
         {{!-- Journal Tab --}}
         <div class="tab journal" data-group="primary" data-tab="journal">
+            <label class="resource-label">Mettez ici tous ce que vous avez dans votre inventaire</label><p></p>
             <div>
             {{editor content=data.notes target="data.notes" button=true owner=owner editable=editable}}
             </div>
