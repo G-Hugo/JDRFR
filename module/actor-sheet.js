@@ -126,7 +126,6 @@ export class SimpleActorSheet extends ActorSheet {
 
     // Rollable Buttons
     html.find(".characteristic-roll").click(this._onClickCharacteristic.bind(this));
-    html.find(".skill-roll").click(this._onSkillRoll.bind(this));
     html.find(".magic-skill-roll").click(this._onMagicSkillRoll.bind(this));
     html.find(".combat-roll").click(this._onCombatRoll.bind(this));
     html.find(".magic-roll").click(this._onSpellRoll.bind(this));

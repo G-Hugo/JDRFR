@@ -2,7 +2,7 @@
   "name": "uesrpg-d100-modifie",
   "title": "Modif UESRPG d100",
   "description": "Une version modif de UESRPG",
-  "version": 0.6,
+  "version": 0.7,
   "minimumCoreVersion": "0.5.6",
   "compatibleCoreVersion": "0.7.9",
   "templateVersion": 2,
