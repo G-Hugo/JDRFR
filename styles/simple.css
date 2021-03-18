@@ -69,7 +69,7 @@
 .worldbuilding .resource-label {
   display: block;
   text-align: center;
-  width: 95px;
+  width: 100px;
   font-size: larger;
 }
 .worldbuilding .resource-hp {
@@ -500,9 +500,79 @@
   border-style: groove;
   padding: 5px;
 }
+.worldbuilding .characteristic-roll-for {
+  background-color: transparent;
+  font-weight: bold;
+  border-radius: 10%;
+  border-style: groove;
+  padding: 5px;
+  background-color: red;
+  color: white;
+}
+.worldbuilding .characteristic-roll-agi {
+  background-color: transparent;
+  font-weight: bold;
+  border-radius: 10%;
+  border-style: groove;
+  padding: 5px;
+  background-color: rgb(0, 255, 100);
+  color: white;
+}
+.worldbuilding .characteristic-roll-int {
+  background-color: transparent;
+  font-weight: bold;
+  border-radius: 10%;
+  border-style: groove;
+  padding: 5px;
+  background-color: rgb(140, 0, 255);
+  color: white;
+}
+.worldbuilding .characteristic-roll-per {
+  background-color: transparent;
+  font-weight: bold;
+  border-radius: 10%;
+  border-style: groove;
+  padding: 5px;
+  background-color: rgb(0, 130, 255);
+  color: white;
+}
+.worldbuilding .characteristic-roll-soc {
+  background-color: transparent;
+  font-weight: bold;
+  border-radius: 10%;
+  border-style: groove;
+  padding: 5px;
+  background-color: rgb(255, 0, 240);
+  color: white;
+}
 .worldbuilding .characteristic-roll:hover {
   border-color: black;
   background-color: red;
+  color: white;
+}
+.worldbuilding .characteristic-roll-for:hover {
+  border-color: black;
+  background-color: rgb(140, 0, 0);
+  color: white;
+}
+.worldbuilding .characteristic-roll-agi:hover {
+  border-color: black;
+  background-color: rgb(0, 125, 50);
+  color: white;
+}
+.worldbuilding .characteristic-roll-int:hover {
+  border-color: black;
+  background-color: rgb(70, 0, 130);
+  color: white;
+}
+.worldbuilding .characteristic-roll-per:hover {
+  border-color: black;
+  background-color: rgb(0, 60, 115);
+  color: white;
+}
+.worldbuilding .characteristic-roll-soc:hover {
+  border-color: black;
+  background-color: rgb(140, 0, 130);
   color: white;
 }
 .worldbuilding .skill-roll {
@@ -691,28 +761,42 @@
   text-align: left;
 }
 .rainbow {
-  text-align: center;
   text-decoration: underline;
-  font-size: 32px;
-  font-family: monospace;
-  letter-spacing: 5px;
   animation: colorRotate 4s linear 0s infinite;
 }
 
 @keyframes colorRotate {
   from {
-    color: #6666ff;
+    color: #FF2D00;
   }
-  25% {
-    color: #0099ff;
+  10% {
+    color: #FF9700;
+  }
+  20% {
+    color: #FFF000;
+  }
+  30% {
+    color: #6CFF00;
+  }
+  40% {
+    color: #00FFDC;
   }
   50% {
-    color: #00ff00;
+    color: #009EFF;
   }
-  75% {
-    color: #ff3399;
+  60% {
+    color: #002BFF;
+  }
+  70% {
+    color: #6C00FF;
+  }
+  80% {
+    color: #FF00E4;
+  }
+  90% {
+    color: #FF0064;
   }
   100% {
-    color: #6666ff;
+    color: #FF001B;
   }
 }

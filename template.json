@@ -27,6 +27,8 @@
         "sunlightR": 0,
         "silverR": 0
       },
+      "reussite_critique_max": "",
+      "echec_critique_max": "",
       "lucky_numbers": {
         "ln1": 0,
         "ln2": 0,
@@ -62,15 +64,56 @@
           "favored": false,
           "name": "STR"
         },
+        "for": {
+          "value": 0,
+          "favored": false,
+          "name": "FOR"
+        },
         "end": {
           "value": 0,
           "favored": false,
           "name": "END"
         },
+        
         "agi": {
           "value": 0,
           "favored": false,
           "name": "AGI"
+        },
+        "int": {
+          "value": 0,
+          "favored": false,
+          "name": "INT"
+        },
+        "wp": {
+          "value": 0,
+          "favored": false,
+          "name": "WP"
+        },
+        "prc": {
+          "value": 0,
+          "favored": false,
+          "name": "PRC"
+        },
+        "per": {
+          "value": 0,
+          "favored": false,
+          "name": "PER"
+        },
+        "prs": {
+          "value": 0,
+          "favored": false,
+          "name": "PRS"
+        },
+        "soc": {
+          "value": 0,
+          "favored": false,
+          "name": "SOC"
+        },
+        "lck": {
+          "value": 0,
+          "favored": false,
+          "name": "LCK"
         }
       },
       "hp": {

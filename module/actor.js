@@ -410,6 +410,8 @@ export class SimpleActor extends Actor {
       data.speed.swimSpeed = data.speed.swimSpeed;
     }
 
+    //Les critiques
+
     //Wounded Penalties
     let woundPen = -20;
     data.woundPenalty = woundPen;
