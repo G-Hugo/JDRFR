@@ -69,31 +69,6 @@
           "value": 0,
           "favored": false,
           "name": "AGI"
-        },
-        "int": {
-          "value": 0,
-          "favored": false,
-          "name": "INT"
-        },
-        "wp": {
-          "value": 0,
-          "favored": false,
-          "name": "WP"
-        },
-        "prc": {
-          "value": 0,
-          "favored": false,
-          "name": "PRC"
-        },
-        "prs": {
-          "value": 0,
-          "favored": false,
-          "name": "PRS"
-        },
-        "lck": {
-          "value": 0,
-          "favored": false,
-          "name": "LCK"
         }
       },
       "hp": {
