@@ -757,19 +757,19 @@
 
 @keyframes colorRotateRC {
   from {
-    color: #167000;
+    color: #4CFA00;
   }
   25% {
-    color: #6BF249;
+    color: #44E300;
   }
   50% {
-    color: #30F000;
+    color: #2D9600;
   }
   75% {
-    color: #357026;
+    color: #237D00;
   }
   100% {
-    color: #25BD00;
+    color: #4CFA00;
   }
 }
 
@@ -800,19 +800,19 @@
 
 @keyframes colorRotateEC {
   from {
-    color: #701500;
+    color: #FA1100;
   }
   25% {
-    color: #F26849;
+    color: #E30F00;
   }
   50% {
-    color: #F02C00;
+    color: #970A00;
   }
   75% {
-    color: #703426;
+    color: #A30B00;
   }
   100% {
-    color: #BD2400;
+    color: #FA1100;
   }
 }
 
@@ -823,18 +823,18 @@
 
 @keyframes colorRotateEU {
   from {
-    color: #E0000F;
+    color: #FF0000;
   }
   25% {
-    color: #94000A;
+    color: #AB0000;
   }
   50% {
-    color: #470005;
+    color: #000000;
   }
   75% {
-    color: #540006;
+    color: #AB0000;
   }
   100% {
-    color: #E0000F;
+    color: #FF0000;
   }
 }
