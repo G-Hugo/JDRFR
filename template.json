@@ -68,42 +68,50 @@
         },
         "for": {
           "value": 0,
+          "modifieur": 0,
           "favored": false,
           "name": "FOR"
         },
         "end": {
           "value": 0,
+          "modifieur": 0,
           "favored": false,
           "name": "END"
         },
         
         "agi": {
           "value": 0,
+          "modifieur": 0,
           "favored": false,
           "name": "AGI"
         },
         "int": {
           "value": 0,
+          "modifieur": 0,
           "favored": false,
           "name": "INT"
         },
         "wp": {
           "value": 0,
+          "modifieur": 0,
           "favored": false,
           "name": "WP"
         },
         "prc": {
           "value": 0,
+          "modifieur": 0,
           "favored": false,
           "name": "PRC"
         },
         "per": {
           "value": 0,
+          "modifieur": 0,
           "favored": false,
           "name": "PER"
         },
         "prs": {
           "value": 0,
+          "modifieur": 0,
           "favored": false,
           "name": "PRS"
         },
@@ -114,6 +122,7 @@
         },
         "lck": {
           "value": 0,
+          "modifieur": 0,
           "favored": false,
           "name": "LCK"
         }
@@ -700,43 +709,53 @@
         },
         "for": {
           "value": 0,
+          "modifieur": 0,
           "favored": false
         },
         "end": {
           "value": 0,
+          "modifieur": 0,
           "favored": false
         },
         
         "agi": {
           "value": 0,
+          "modifieur": 0,
           "favored": false
         },
         "int": {
           "value": 0,
+          "modifieur": 0,
           "favored": false
         },
         "wp": {
           "value": 0,
+          "modifieur": 0,
           "favored": false
         },
         "prc": {
           "value": 0,
+          "modifieur": 0,
           "favored": false
         },
         "per": {
           "value": 0,
+          "modifieur": 0,
           "favored": false
         },
         "prs": {
           "value": 0,
+          "modifieur": 0,
           "favored": false
         },
         "soc": {
           "value": 0,
+          "modifieur": 0,
           "favored": false
         },
         "lck": {
           "value": 0,
+          "modifieur": 0,
           "favored": false
         }
       },
