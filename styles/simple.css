@@ -750,43 +750,91 @@
   font-size: large;
   text-align: left;
 }
-.rainbow {
+.rainbowRC {
   text-decoration: underline;
-  animation: colorRotate 3s linear 0s infinite;
+  animation: colorRotateRC 3s linear 0s infinite;
 }
 
-@keyframes colorRotate {
+@keyframes colorRotateRC {
   from {
-    color: #FF2D00;
+    color: #167000;
   }
-  10% {
-    color: #FF9700;
-  }
-  20% {
-    color: #FFF000;
-  }
-  30% {
-    color: #33ff00;
-  }
-  40% {
-    color: #00FFDC;
+  25% {
+    color: #6BF249;
   }
   50% {
-    color: #0099ff;
+    color: #30F000;
   }
-  60% {
-    color: #0400ff;
-  }
-  70% {
-    color: #8c00ff;
-  }
-  80% {
-    color: #FF00E4;
-  }
-  90% {
-    color: #FF0064;
+  75% {
+    color: #357026;
   }
   100% {
-    color: #FF001B;
+    color: #25BD00;
+  }
+}
+
+.rainbowRU {
+  text-decoration: underline;
+  animation: colorRotateRU 3s linear 0s infinite;
+}
+
+@keyframes colorRotateRU {
+  from {
+    color: #FAB700;
+  }
+  33% {
+    color: #FAD401;
+  }
+  66% {
+    color: #FAED03;
+  }
+  100% {
+    color: #FAB700;
+  }
+}
+
+.rainbowEC {
+  text-decoration: underline;
+  animation: colorRotateEC 3s linear 0s infinite;
+}
+
+@keyframes colorRotateEC {
+  from {
+    color: #701500;
+  }
+  25% {
+    color: #F26849;
+  }
+  50% {
+    color: #F02C00;
+  }
+  75% {
+    color: #703426;
+  }
+  100% {
+    color: #BD2400;
+  }
+}
+
+.rainbowEU {
+  text-decoration: underline;
+  animation: colorRotateEU 3s linear 0s infinite;
+}
+
+@keyframes colorRotateEU {
+  from {
+    color: #E0000F;
+  }
+  25% {
+    color: #94000A;
+  }
+  50% {
+    color: #470005;
+  }
+  75% {
+    color: #540006;
+  }
+  100% {
+    color: #E0000F;
   }
 }

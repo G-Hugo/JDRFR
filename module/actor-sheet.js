@@ -190,6 +190,8 @@ export class SimpleActorSheet extends ActorSheet {
     let modifieur_stat = this.actor.data.data.characteristics[element.id].modifieur
     let reussite_critique = this.actor.data.data.reussite_critique_max
     let echec_critique = this.actor.data.data.echec_critique_max
+    let reussite_ultime = 1
+    let echec_ultime = 100
 
     let d = new Dialog({
       title: "Ajout modifieur",
@@ -211,15 +213,30 @@ export class SimpleActorSheet extends ActorSheet {
           const content = `Jet de <b>${element.name}</b>!
           <p></p><b>Stat actuelle: [[${wounded_char} + ${modifieur_stat} + ${playerInput}]]</b> <p></p>
           <b>Resultat: [[${roll.total}]]</b><p></p>
-          <span style='font-size:120%;' class="rainbow"> <b>REUSSITE CRITIQUE !</b></span>`
+          <span style='font-size:120%;' class="rainbowRC"> <b>REUSSITE CRITIQUE !</b></span>`
           roll.toMessage({type: 4, user: game.user._id, speaker: ChatMessage.getSpeaker(), content: content});
     
         } else if (roll.total >= echec_critique) {
           const content = `Jet de <b>${element.name}</b>!
           <p></p><b>Stat actuelle: [[${wounded_char} + ${modifieur_stat} + ${playerInput}]]</b> <p></p>
           <b>Resultat: [[${roll.total}]]</b><p></p>
-          <span style='color:red; font-size:120%;'> <b>ECHEC CRITIQUE !</b></span>`
+          <span style='font-size:120%;' class="rainbowEC"> <b>ECHEC CRITIQUE !</b></span>`
           roll.toMessage({type: 4, user: game.user._id, speaker: ChatMessage.getSpeaker(), content: content});
+
+        } else if (roll.total == reussite_ultime) {
+          const content = `Jet de <b>${element.name}</b>!
+          <p></p><b>Stat actuelle: [[${wounded_char} + ${modifieur_stat} + ${playerInput}]]</b> <p></p>
+          <b>Resultat: [[${roll.total}]]</b><p></p>
+          <span style='font-size:120%;' class="rainbowRU"> <b>REUSSITE ULTIME !</b></span>`
+          roll.toMessage({type: 4, user: game.user._id, speaker: ChatMessage.getSpeaker(), content: content});
+
+        } else if (roll.total == echec_ultime) {
+          const content = `Jet de <b>${element.name}</b>!
+          <p></p><b>Stat actuelle: [[${wounded_char} + ${modifieur_stat} + ${playerInput}]]</b> <p></p>
+          <b>Resultat: [[${roll.total}]]</b><p></p>
+          <span style='font-size:120%;' class="rainbowEU"> <b>ECHEC ULTIME !</b></span>`
+          roll.toMessage({type: 4, user: game.user._id, speaker: ChatMessage.getSpeaker(), content: content});
+    
     
         } else {
           const content = `Jet de <b>${element.name}</b>!
@@ -233,14 +250,28 @@ export class SimpleActorSheet extends ActorSheet {
         const content = `Jet de <b>${element.name}</b>!
         <p></p><b>Stat actuelle: [[${this.actor.data.data.characteristics[element.id].value} + ${this.actor.data.data.characteristics[element.id].modifieur} + ${playerInput}]]</b> <p></p>
         <b>Resultat: [[${roll.total}]]</b><p></p>
-        <span style='font-size:120%;' class="rainbow"> <b>REUSSITE CRITIQUE !</b></span>`
+        <span style='font-size:120%;' class="rainbowRC"> <b>REUSSITE CRITIQUE !</b></span>`
         roll.toMessage({type: 4, user: game.user._id, speaker: ChatMessage.getSpeaker(), content: content});
 
       } else if (roll.total >= echec_critique) {
         const content = `Jet de <b>${element.name}</b>!
         <p></p><b>Stat actuelle: [[${this.actor.data.data.characteristics[element.id].value} + ${this.actor.data.data.characteristics[element.id].modifieur} + ${playerInput}]]</b> <p></p>
         <b>Resultat: [[${roll.total}]]</b><p></p>
-        <span style='color:red; font-size:120%;'> <b>ECHEC CRITIQUE !</b></span>`
+        <span style='font-size:120%;' class="rainbowEC"> <b>ECHEC CRITIQUE !</b></span>`
+        roll.toMessage({type: 4, user: game.user._id, speaker: ChatMessage.getSpeaker(), content: content});
+
+      } else if (roll.total == reussite_ultime) {
+        const content = `Jet de <b>${element.name}</b>!
+        <p></p><b>Stat actuelle: [[${this.actor.data.data.characteristics[element.id].value} + ${this.actor.data.data.characteristics[element.id].modifieur} + ${playerInput}]]</b> <p></p>
+        <b>Resultat: [[${roll.total}]]</b><p></p>
+        <span style='font-size:120%;' class="rainbowRU"> <b>REUSSITE ULTIME !</b></span>`
+        roll.toMessage({type: 4, user: game.user._id, speaker: ChatMessage.getSpeaker(), content: content});
+
+      } else if (roll.total == echec_ultime) {
+        const content = `Jet de <b>${element.name}</b>!
+        <p></p><b>Stat actuelle: [[${this.actor.data.data.characteristics[element.id].value} + ${this.actor.data.data.characteristics[element.id].modifieur} + ${playerInput}]]</b> <p></p>
+        <b>Resultat: [[${roll.total}]]</b><p></p>
+        <span style='font-size:120%;' class="rainbowEU"> <b>ECHEC ULTIME !</b></span>`
         roll.toMessage({type: 4, user: game.user._id, speaker: ChatMessage.getSpeaker(), content: content});
 
       } else {
