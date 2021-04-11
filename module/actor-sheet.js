@@ -188,8 +188,8 @@ export class SimpleActorSheet extends ActorSheet {
     const element = event.currentTarget
     let wounded_char = this.actor.data.data.characteristics[element.id].value - 20
     let modifieur_stat = this.actor.data.data.characteristics[element.id].modifieur
-    let reussite_critique = this.actor.data.data.character.reussite_critique_max
-    let echec_critique = this.actor.data.data.character.echec_critique_max
+    let reussite_critique = 5
+    let echec_critique = 96
 
     let d = new Dialog({
       title: "Ajout modifieur",
