@@ -62,6 +62,7 @@
       "characteristics": {
         "str": {
           "value": 0,
+          "modifieur": 0,
           "favored": false,
           "name": "STR"
         },
@@ -694,6 +695,7 @@
       "characteristics": {
         "str": {
           "value": 0,
+          "modifieur": 0,
           "favored": false
         },
         "for": {
