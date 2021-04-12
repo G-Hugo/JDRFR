@@ -20,8 +20,9 @@
     {{!-- Sheet Tab Navigation --}}
     <nav class="sheet-tabs tabs" data-group="primary">
         <a class="item" data-tab="core">Information</a>
-        <a class="item" data-tab="passif">Passif</a>
         <a class="item" data-tab="magie">Magie</a>
+        <a class="item" data-tab="passif">Passif</a>
+        <a class="item" data-tab="equipement">Equipement</a>
         <a class="item" data-tab="journal">Inventaire</a>
         <a class="item" data-tab="metier">Métier</a>
     </nav>
@@ -68,15 +69,15 @@
                 <table>
                     <tr>
                         <th>Race</th>
-                        <th>Age</th>
                         <th>Bourse</th>
-                        <th>Armure</th>
+                        <th>Armure P</th>
+                        <th>Armure M</th>
                     </tr>
                     <tr class="field-inputs">
                         <td><input type="text" name="data.race" value="{{data.race}}"></td>
-                        <td><input type="text" name="data.birthsign" value="{{data.birthsign}}"></td>
-                        <td><input type="text" name="data.xp" value="{{data.xp}}"></td>
-                        <td><input type="text" name="data.xpTotal" value="{{data.xpTotal}}"></td>
+                        <td><input type="text" name="data.bourse" value="{{data.bourse}}"></td>
+                        <td><input type="text" name="data.armureP" value="{{data.armureP}}"></td>
+                        <td><input type="text" name="data.armureM" value="{{data.armureM}}"></td>
                     </tr>
                 </table>
                 <table>
@@ -112,13 +113,8 @@
         
 
         {{!-- Talents Tab --}}
-        {{!-- Passif Tab --}}
-        <div class="tab passif" data-group="primary" data-tab="passif">
-            <h2 class="bioHeader">Mettez ici tous vos bonus passifs</h2>
-            <div>
-            {{editor content=data.passif target="data.passif" button=true owner=owner editable=editable}}
-            </div>
-        </div>
+        
+
 
         {{!-- Magie Tab --}}
         <div class="tab magie" data-group="primary" data-tab="magie">
@@ -128,6 +124,22 @@
             </div>
         </div>
 
+        {{!-- Passif Tab --}}
+        <div class="tab passif" data-group="primary" data-tab="passif">
+            <h2 class="bioHeader">Mettez ici tous vos bonus passifs</h2>
+            <div>
+            {{editor content=data.passif target="data.passif" button=true owner=owner editable=editable}}
+            </div>
+        </div>
+
+        {{!-- Equipement Tab --}}
+        <div class="tab equipement" data-group="primary" data-tab="equipement">
+            <h2 class="bioHeader">Mettez ici tout votre équipements</h2>
+            <div>
+            {{editor content=data.equipement target="data.equipement" button=true owner=owner editable=editable}}
+            </div>
+        </div>
+        
         {{!-- Journal Tab --}}
         <div class="tab journal" data-group="primary" data-tab="journal">
             <h2 class="bioHeader">Mettez ici tous ce que vous avez dans votre inventaire</h2>
@@ -143,6 +155,8 @@
             {{editor content=data.metier target="data.metier" button=true owner=owner editable=editable}}
             </div>
         </div>
+
+        
 
         {{!-- Owned Items Tab --}}
         

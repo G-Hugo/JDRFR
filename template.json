@@ -14,7 +14,11 @@
       "bio": "",
       "journal": "",
       "passif": "",
+      "amureP": "",
+      "amureM": "",
       "magie": "",
+      "bourse":"",
+      "equipement": "",
       "notes": "",
       "metier": "",
       "resistance": {
@@ -1062,15 +1066,15 @@
       "characteristicArray": {
         "characteristics": {
           "str": "STR",
-          "for": "FOR",
+          "for": "FORCE",
           "end": "END",
-          "agi": "AGI",
-          "int": "INT",
+          "agi": "AGILITE",
+          "int": "INTELLIGENCE",
           "wp": "WP",
           "prc": "PRC",
-          "per": "PER",
+          "per": "PERCEPTION",
           "prs": "PRS",
-          "soc": "SOC",
+          "soc": "SOCIAL",
           "lck": "LCK"
         }
       },

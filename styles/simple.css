@@ -818,7 +818,7 @@
 
 .rainbowEU {
   text-decoration: underline;
-  animation: colorRotateEU 3s linear 0s infinite;
+  animation: colorRotateEU 2s linear 0s infinite;
 }
 
 @keyframes colorRotateEU {
