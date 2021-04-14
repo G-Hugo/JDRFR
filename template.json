@@ -74,7 +74,7 @@
           "value": 0,
           "modifieur": 0,
           "favored": false,
-          "name": "FORCE"
+          "name": "FOR"
         },
         "end": {
           "value": 0,
@@ -1066,7 +1066,7 @@
       "characteristicArray": {
         "characteristics": {
           "str": "STR",
-          "for": "FORCE",
+          "for": "FOR",
           "end": "END",
           "agi": "AGI",
           "int": "INT",
