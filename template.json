@@ -7,6 +7,7 @@
       "age": "",
       "height": "",
       "weight": "",
+      "elite_adv": "",
       "wounded": false,
       "woundPenalty": 0,
       "woundNotes": "",
@@ -51,11 +52,13 @@
           "value": 0,
           "favored": false,
           "name": "SOC"
-        },
+        }
+      },
       "hp": {
         "value": 0,
         "max": 0
-      },
+      }
+    },
     "npc": {
       "race": "",
       "birthsign": "",
