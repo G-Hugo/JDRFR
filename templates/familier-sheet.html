@@ -2,12 +2,12 @@
 
     {{!-- Sheet Header --}}
     <header class="sheet-header">
-        <img class="profile-img" src="{{familier.img}}" data-edit="img" title="{{familier.name}}" height="100" width="100"/>
+        <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100"/>
         <div class="header-fields">
             <div>
-                <h1 class="bioHeader">Fiche personnage</h1>
+                <h1 class="bioHeader">Fiche familier</h1>
             </div>
-            <h1 class="charname"><input name="name" type="text" value="{{familier.name}}" placeholder="Name"/></h1>
+            <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="Name"/></h1>
             <div class="resources">
                 <label class="resource-label" >ღPoint de vieღ</label><p>
                 <input class="resource-hp" type="text" name="data.hp.value" value="{{data.hp.value}}" data-dtype="Number"/>
@@ -146,18 +146,6 @@
             {{editor content=data.notes target="data.notes" button=true owner=owner editable=editable}}
             </div>
         </div>
-
-        {{!-- Metier Tab --}}
-        <div class="tab metier" data-group="primary" data-tab="metier">
-            <h2 class="bioHeader">Mettez ici tous ce que vous avez comme métier</h2>
-            <div>
-            {{editor content=data.metier target="data.metier" button=true owner=owner editable=editable}}
-            </div>
-        </div>
-
-        
-
-        {{!-- Owned Items Tab --}}
         
     </section>
 </form>

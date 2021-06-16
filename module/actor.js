@@ -15,6 +15,7 @@ export class SimpleActor extends Actor {
     // things organized.
     if (actorData.type === 'character') this._prepareCharacterData(actorData);
     if (actorData.type === 'npc') this._prepareNPCData(actorData);
+    if (actorData.type === 'familier') this._prepareFamilierData(actorData);
   }
 
   /**
@@ -963,6 +964,20 @@ export class SimpleActor extends Actor {
       data.lucky_numbers.ln10 = 10;
     }
 
+  }
+
+  _prepareFamilierData(actorData) {
+    const data = actorData.data;
+
+    //Characteristic Bonuses
+    
+    var forBonus = Math.floor(data.characteristics.for.value / 10);
+    var endBonus = Math.floor(data.characteristics.end.value / 10);
+    var agiBonus = Math.floor(data.characteristics.agi.value / 10);
+    var intBonus = Math.floor(data.characteristics.int.value / 10);
+    var perBonus = Math.floor(data.characteristics.per.value / 10);
+    var prsBonus = Math.floor(data.characteristics.prs.value / 10);
+    var socBonus = Math.floor(data.characteristics.soc.value / 10);
   }
 
   _sortCarriedItems(actorData) {

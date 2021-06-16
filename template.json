@@ -1,6 +1,6 @@
 {
   "Actor": {
-    "types": ["character", "npc"],
+    "types": ["character", "npc", "familier"],
     "character": {
       "race": "",
       "birthsign": "",
@@ -1057,12 +1057,8 @@
           "class": ""
         }
       }
-    }
-      
-  },
-  "Familier": {
-    "types": ["familier"],
-    "character": {
+    },
+    "familier": {
       "race": "",
       "age": "",
       "bio": "",
@@ -1127,6 +1123,7 @@
         "bonus": 0
       }
     }
+      
   },
   "Item": {
     "types": ["item", "armor", "weapon", "spell", "trait", "power", "talent", "combatStyle", "ammunition"],
