@@ -1060,6 +1060,74 @@
     }
       
   },
+  "Familier": {
+    "types": ["character"],
+    "character": {
+      "race": "",
+      "age": "",
+      "bio": "",
+      "journal": "",
+      "passif": "",
+      "amureP": "",
+      "amureM": "",
+      "magie": "",
+      "equipement": "",
+      "notes": "",
+      "reussite_critique_max": "",
+      "echec_critique_max": "",
+      "characteristics": {
+        "for": {
+          "value": 0,
+          "modifieur": 0,
+          "favored": false,
+          "name": "FOR"
+        },
+        "end": {
+          "value": 0,
+          "modifieur": 0,
+          "favored": false,
+          "name": "END"
+        },
+        
+        "agi": {
+          "value": 0,
+          "modifieur": 0,
+          "favored": false,
+          "name": "AGI"
+        },
+        "int": {
+          "value": 0,
+          "modifieur": 0,
+          "favored": false,
+          "name": "INT"
+        },
+        "per": {
+          "value": 0,
+          "modifieur": 0,
+          "favored": false,
+          "name": "PER"
+        },
+        "prs": {
+          "value": 0,
+          "modifieur": 0,
+          "favored": false,
+          "name": "PRS"
+        },
+        "soc": {
+          "value": 0,
+          "favored": false,
+          "name": "SOC"
+        }
+      },
+      "hp": {
+        "base": 0,
+        "value": 0,
+        "max": 0,
+        "temp": 0,
+        "bonus": 0
+      }
+    }
+  },
   "Item": {
     "types": ["item", "armor", "weapon", "spell", "trait", "power", "talent", "combatStyle", "ammunition"],
     "templates": {
