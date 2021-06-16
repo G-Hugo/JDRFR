@@ -970,15 +970,526 @@ export class SimpleActor extends Actor {
     const data = actorData.data;
 
     //Characteristic Bonuses
-    
+    var strBonus = Math.floor(data.characteristics.str.value / 10);
     var forBonus = Math.floor(data.characteristics.for.value / 10);
     var endBonus = Math.floor(data.characteristics.end.value / 10);
     var agiBonus = Math.floor(data.characteristics.agi.value / 10);
     var intBonus = Math.floor(data.characteristics.int.value / 10);
+    var wpBonus = Math.floor(data.characteristics.wp.value / 10);
+    var prcBonus = Math.floor(data.characteristics.prc.value / 10);
     var perBonus = Math.floor(data.characteristics.per.value / 10);
     var prsBonus = Math.floor(data.characteristics.prs.value / 10);
     var socBonus = Math.floor(data.characteristics.soc.value / 10);
+    var lckBonus = Math.floor(data.characteristics.lck.value / 10);
+
+    //Skill Bonus Calculation
+    const legacyUntrained = game.settings.get("uesrpg-d100", "legacyUntrainedPenalty");
+
+    if (legacyUntrained) {
+      for (var skill in data.skills) {
+        if (data.skills[skill].rank == "untrained") {
+          data.skills[skill].bonus = -20;
+        } else if (data.skills[skill].rank == "novice") {
+          data.skills[skill].bonus = 0;
+        } else if (data.skills[skill].rank == "apprentice") {
+          data.skills[skill].bonus = 10;
+        } else if (data.skills[skill].rank == "journeyman") {
+          data.skills[skill].bonus = 20;
+        } else if (data.skills[skill].rank == "adept") {
+          data.skills[skill].bonus = 30;
+        } else if (data.skills[skill].rank == "expert") {
+          data.skills[skill].bonus = 40;
+        } else if (data.skills[skill].rank == "master") {
+          data.skills[skill].bonus = 50;
+        }
+      }
+
+    } else {
+    for (var skill in data.skills) {
+      if (data.skills[skill].rank == "untrained") {
+        data.skills[skill].bonus = -10;
+      } else if (data.skills[skill].rank == "novice") {
+        data.skills[skill].bonus = 0;
+      } else if (data.skills[skill].rank == "apprentice") {
+        data.skills[skill].bonus = 10;
+      } else if (data.skills[skill].rank == "journeyman") {
+        data.skills[skill].bonus = 20;
+      } else if (data.skills[skill].rank == "adept") {
+        data.skills[skill].bonus = 30;
+      } else if (data.skills[skill].rank == "expert") {
+        data.skills[skill].bonus = 40;
+      } else if (data.skills[skill].rank == "master") {
+        data.skills[skill].bonus = 50;
+      }
+    }
   }
+
+    //Magic Skill Bonus Calculation
+    if (legacyUntrained) {
+      for (var skill in data.magic_skills) {
+        if (data.magic_skills[skill].rank == "untrained") {
+          data.magic_skills[skill].bonus = -20;
+        } else if (data.magic_skills[skill].rank == "novice") {
+          data.magic_skills[skill].bonus = 0;
+        } else if (data.magic_skills[skill].rank == "apprentice") {
+          data.magic_skills[skill].bonus = 10;
+        } else if (data.magic_skills[skill].rank == "journeyman") {
+          data.magic_skills[skill].bonus = 20;
+        } else if (data.magic_skills[skill].rank == "adept") {
+          data.magic_skills[skill].bonus = 30;
+        } else if (data.magic_skills[skill].rank == "expert") {
+          data.magic_skills[skill].bonus = 40;
+        } else if (data.magic_skills[skill].rank == "master") {
+          data.magic_skills[skill].bonus = 50;
+      }
+    }
+  } else {
+      for (var skill in data.magic_skills) {
+        if (data.magic_skills[skill].rank == "untrained") {
+          data.magic_skills[skill].bonus = -10;
+        } else if (data.magic_skills[skill].rank == "novice") {
+          data.magic_skills[skill].bonus = 0;
+        } else if (data.magic_skills[skill].rank == "apprentice") {
+          data.magic_skills[skill].bonus = 10;
+        } else if (data.magic_skills[skill].rank == "journeyman") {
+          data.magic_skills[skill].bonus = 20;
+        } else if (data.magic_skills[skill].rank == "adept") {
+          data.magic_skills[skill].bonus = 30;
+        } else if (data.magic_skills[skill].rank == "expert") {
+          data.magic_skills[skill].bonus = 40;
+        } else if (data.magic_skills[skill].rank == "master") {
+          data.magic_skills[skill].bonus = 50;
+      }
+    }
+  }
+
+    //Combat Style Skill Bonus Calculation
+    if (legacyUntrained) {
+      for (var skill in data.combat_styles) {
+        if (data.combat_styles[skill].rank == "untrained") {
+          data.combat_styles[skill].bonus = -20 + this._untrainedException(actorData);
+        } else if (data.combat_styles[skill].rank == "novice") {
+          data.combat_styles[skill].bonus = 0;
+        } else if (data.combat_styles[skill].rank == "apprentice") {
+          data.combat_styles[skill].bonus = 10;
+        } else if (data.combat_styles[skill].rank == "journeyman") {
+          data.combat_styles[skill].bonus = 20;
+        } else if (data.combat_styles[skill].rank == "adept") {
+          data.combat_styles[skill].bonus = 30;
+        } else if (data.combat_styles[skill].rank == "expert") {
+          data.combat_styles[skill].bonus = 40;
+        } else if (data.combat_styles[skill].rank == "master") {
+          data.combat_styles[skill].bonus = 50;
+      }
+    }
+    } else {
+        for (var skill in data.combat_styles) {
+          if (data.combat_styles[skill].rank == "untrained") {
+            data.combat_styles[skill].bonus = -10 + this._untrainedException(actorData);
+          } else if (data.combat_styles[skill].rank == "novice") {
+            data.combat_styles[skill].bonus = 0;
+          } else if (data.combat_styles[skill].rank == "apprentice") {
+            data.combat_styles[skill].bonus = 10;
+          } else if (data.combat_styles[skill].rank == "journeyman") {
+            data.combat_styles[skill].bonus = 20;
+          } else if (data.combat_styles[skill].rank == "adept") {
+            data.combat_styles[skill].bonus = 30;
+          } else if (data.combat_styles[skill].rank == "expert") {
+            data.combat_styles[skill].bonus = 40;
+          } else if (data.combat_styles[skill].rank == "master") {
+            data.combat_styles[skill].bonus = 50;
+      }
+    }
+  }
+
+    // Skill TN Calculation
+    for (var skill in data.skills) {
+      if (data.skills[skill].characteristic == "str") {
+        data.skills[skill].tn = data.characteristics.str.value + data.skills[skill].bonus;
+      } else if (data.skills[skill].characteristic == "for") {
+        data.skills[skill].tn = data.characteristics.for.value + data.skills[skill].bonus;
+      } else if (data.skills[skill].characteristic == "end") {
+        data.skills[skill].tn = data.characteristics.end.value + data.skills[skill].bonus;
+      } else if (data.skills[skill].characteristic == "agi") {
+        data.skills[skill].tn = data.characteristics.agi.value + data.skills[skill].bonus;
+      } else if (data.skills[skill].characteristic == "int") {
+        data.skills[skill].tn = data.characteristics.int.value + data.skills[skill].bonus;
+      } else if (data.skills[skill].characteristic == "wp") {
+        data.skills[skill].tn = data.characteristics.wp.value + data.skills[skill].bonus;
+      } else if (data.skills[skill].characteristic == "prc") {
+        data.skills[skill].tn = data.characteristics.prc.value + data.skills[skill].bonus;
+      } else if (data.skills[skill].characteristic == "per") {
+        data.skills[skill].tn = data.characteristics.per.value + data.skills[skill].bonus;
+      } else if (data.skills[skill].characteristic == "prs") {
+        data.skills[skill].tn = data.characteristics.prs.value + data.skills[skill].bonus;
+      } else if (data.skills[skill].characteristic == "soc") {
+        data.skills[skill].tn = data.characteristics.soc.value + data.skills[skill].bonus;
+      } else if (data.skills[skill].characteristic == "lck") {
+        data.skills[skill].tn = data.characteristics.lck.value + data.skills[skill].bonus;
+      }
+    }
+
+    //Magic Skill TN Calculation
+    for (var skill in data.magic_skills) {
+      if (data.magic_skills[skill].characteristic == "str") {
+        data.magic_skills[skill].tn = data.characteristics.str.value + data.magic_skills[skill].bonus;
+      } else if (data.magic_skills[skill].characteristic == "for") {
+        data.magic_skills[skill].tn = data.characteristics.for.value + data.magic_skills[skill].bonus;
+      } else if (data.magic_skills[skill].characteristic == "end") {
+        data.magic_skills[skill].tn = data.characteristics.end.value + data.magic_skills[skill].bonus;
+      } else if (data.magic_skills[skill].characteristic == "agi") {
+        data.magic_skills[skill].tn = data.characteristics.agi.value + data.magic_skills[skill].bonus;
+      } else if (data.magic_skills[skill].characteristic == "int") {
+        data.magic_skills[skill].tn = data.characteristics.int.value + data.magic_skills[skill].bonus;
+      } else if (data.magic_skills[skill].characteristic == "wp") {
+        data.magic_skills[skill].tn = data.characteristics.wp.value + data.magic_skills[skill].bonus;
+      } else if (data.magic_skills[skill].characteristic == "prc") {
+        data.magic_skills[skill].tn = data.characteristics.prc.value + data.magic_skills[skill].bonus;
+      } else if (data.magic_skills[skill].characteristic == "per") {
+        data.magic_skills[skill].tn = data.characteristics.per.value + data.magic_skills[skill].bonus;
+      } else if (data.magic_skills[skill].characteristic == "prs") {
+        data.magic_skills[skill].tn = data.characteristics.prs.value + data.magic_skills[skill].bonus;
+      } else if (data.magic_skills[skill].characteristic == "soc") {
+        data.magic_skills[skill].tn = data.characteristics.end.value + data.magic_skills[skill].bonus;
+      } else if (data.magic_skills[skill].characteristic == "lck") {
+        data.magic_skills[skill].tn = data.characteristics.lck.value + data.magic_skills[skill].bonus;
+      }
+    }
+
+    // Combat Style Skill Calculation
+    for (var skill in data.combat_styles) {
+      if (data.combat_styles[skill].characteristic == "str") {
+        data.combat_styles[skill].tn = data.characteristics.str.value + data.combat_styles[skill].bonus;
+      } else if (data.combat_styles[skill].characteristic == "for") {
+        data.combat_styles[skill].tn = data.characteristics.for.value + data.combat_styles[skill].bonus;
+      } else if (data.combat_styles[skill].characteristic == "end") {
+        data.combat_styles[skill].tn = data.characteristics.end.value + data.combat_styles[skill].bonus;
+      } else if (data.combat_styles[skill].characteristic == "agi") {
+        data.combat_styles[skill].tn = data.characteristics.agi.value + data.combat_styles[skill].bonus;
+      } else if (data.combat_styles[skill].characteristic == "int") {
+        data.combat_styles[skill].tn = data.characteristics.int.value + data.combat_styles[skill].bonus;
+      } else if (data.combat_styles[skill].characteristic == "wp") {
+        data.combat_styles[skill].tn = data.characteristics.wp.value + data.combat_styles[skill].bonus;
+      } else if (data.combat_styles[skill].characteristic == "prc") {
+        data.combat_styles[skill].tn = data.characteristics.prc.value + data.combat_styles[skill].bonus;
+      } else if (data.combat_styles[skill].characteristic == "per") {
+        data.combat_styles[skill].tn = data.characteristics.per.value + data.combat_styles[skill].bonus;
+      } else if (data.combat_styles[skill].characteristic == "prs") {
+        data.combat_styles[skill].tn = data.characteristics.prs.value + data.combat_styles[skill].bonus;
+      } else if (data.combat_styles[skill].characteristic == "soc") {
+        data.combat_styles[skill].tn = data.characteristics.soc.value + data.combat_styles[skill].bonus;
+      } else if (data.combat_styles[skill].characteristic == "lck") {
+        data.combat_styles[skill].tn = data.characteristics.lck.value + data.combat_styles[skill].bonus;
+      }
+    }
+
+    //Talent/Power/Trait Resource Bonuses
+    data.hp.bonus = this._hpBonus(actorData);
+    data.magicka.bonus = this._mpBonus(actorData);
+    data.stamina.bonus = this._spBonus(actorData);
+    data.luck_points.bonus = this._lpBonus(actorData);
+    data.wound_threshold.bonus = this._wtBonus(actorData);
+    data.speed.bonus = this._speedBonus(actorData);
+    data.initiative.bonus = this._iniBonus(actorData);
+
+    //Talent/Power/Trait Resistance Bonuses
+    data.resistance.diseaseR = this._diseaseR(actorData);
+    data.resistance.fireR = this._fireR(actorData);
+    data.resistance.frostR = this._frostR(actorData);
+    data.resistance.shockR = this._shockR(actorData);
+    data.resistance.poisonR = this._poisonR(actorData);
+    data.resistance.magicR = this._magicR(actorData);
+    data.resistance.natToughness = this._natToughnessR(actorData);
+    data.resistance.silverR = this._silverR(actorData);
+    data.resistance.sunlightR = this._sunlightR(actorData);
+
+    //Derived Calculations
+    if (this._isMechanical(actorData) == true) {
+      data.wound_threshold.base = strBonus + (endBonus * 2);
+    } else {
+      data.wound_threshold.base = strBonus + endBonus + wpBonus + (data.wound_threshold.bonus);
+    }
+    data.wound_threshold.value = data.wound_threshold.base;
+    data.wound_threshold.value = this._woundThresholdCalc(actorData);
+    
+    data.speed.base = strBonus + (2 * agiBonus) + (data.speed.bonus);
+    data.speed.value = this._speedCalc(actorData);
+    data.speed.swimSpeed = parseFloat(this._swimCalc(actorData)) + parseFloat((data.speed.value/2).toFixed(0));
+    data.speed.flySpeed = this._flyCalc(actorData);
+
+    data.initiative.base = agiBonus + intBonus + prcBonus + (data.initiative.bonus);
+    data.initiative.value = data.initiative.base;
+    data.initiative.value = this._iniCalc(actorData);
+
+    data.hp.base = Math.ceil(data.characteristics.end.value / 2);
+    data.hp.max = data.hp.base + data.hp.bonus;
+
+    data.magicka.max = data.characteristics.int.value + data.magicka.bonus + this._addIntToMP(actorData);
+
+    data.stamina.max = endBonus + data.stamina.bonus;
+
+    data.luck_points.max = lckBonus + data.luck_points.bonus;
+
+    data.carry_rating.max = Math.floor((4 * strBonus) + (2 * endBonus)) + data.carry_rating.bonus;
+    this._sortCarriedItems(actorData);
+    data.current_enc = (this._calculateENC(actorData) - this._armorWeight(actorData) - this._excludeENC(actorData)).toFixed(1);
+
+    //Form Shift Calcs
+    if (this._wereWolfForm(actorData) === true) {
+      actorData.data.resistance.silverR = actorData.data.resistance.silverR - 5;
+      actorData.data.resistance.diseaseR = actorData.data.resistance.diseaseR + 200;
+      actorData.data.hp.max = actorData.data.hp.max + 5;
+      actorData.data.stamina.max = actorData.data.stamina.max + 1;
+      actorData.data.speed.base = data.speed.base + 9;
+      data.speed.value = this._speedCalc(actorData);
+      data.speed.swimSpeed = (data.speed.value/2).toFixed(0);
+      actorData.data.resistance.natToughness = 5;
+      actorData.data.wound_threshold.base = actorData.data.wound_threshold.base + 5;
+      actorData.data.action_points.max = actorData.data.action_points.max - 1;
+      actorData.data.skills.survival.tn = actorData.data.skills.survival.tn + 30;
+      actorData.data.skills.navigate.tn = actorData.data.skills.navigate.tn + 30;
+      actorData.data.skills.observe.tn = actorData.data.skills.observe.tn + 30;
+    } else if (this._wereBatForm(actorData) === true) {
+        actorData.data.resistance.silverR = actorData.data.resistance.silverR - 5;
+        actorData.data.resistance.diseaseR = actorData.data.resistance.diseaseR + 200;
+        actorData.data.hp.max = actorData.data.hp.max + 5;
+        actorData.data.stamina.max = actorData.data.stamina.max + 1;
+        actorData.data.speed.value = (this._speedCalc(actorData)/2).toFixed(0);
+        actorData.data.speed.flySpeed = actorData.data.speed.base + 9;
+        data.speed.swimSpeed = (data.speed.value/2).toFixed(0);
+        actorData.data.resistance.natToughness = 5;
+        actorData.data.wound_threshold.base = actorData.data.wound_threshold.base + 3;
+        actorData.data.action_points.max = actorData.data.action_points.max - 1;
+        actorData.data.skills.survival.tn = actorData.data.skills.survival.tn + 30;
+        actorData.data.skills.navigate.tn = actorData.data.skills.navigate.tn + 30;
+        actorData.data.skills.observe.tn = actorData.data.skills.observe.tn + 30;
+    } else if (this._wereBoarForm(actorData) === true) {
+        actorData.data.resistance.silverR = actorData.data.resistance.silverR - 5;
+        actorData.data.resistance.diseaseR = actorData.data.resistance.diseaseR + 200;
+        actorData.data.hp.max = actorData.data.hp.max + 5;
+        actorData.data.speed.base = data.speed.base + 9;
+      data.speed.value = this._speedCalc(actorData);
+        data.speed.swimSpeed = (data.speed.value/2).toFixed(0);
+        actorData.data.resistance.natToughness = 7;
+        actorData.data.wound_threshold.base = actorData.data.wound_threshold.base + 5;
+        actorData.data.action_points.max = actorData.data.action_points.max - 1;
+        actorData.data.skills.survival.tn = actorData.data.skills.survival.tn + 30;
+        actorData.data.skills.navigate.tn = actorData.data.skills.navigate.tn + 30;
+        actorData.data.skills.observe.tn = actorData.data.skills.observe.tn + 30;
+    } else if (this._wereBearForm(actorData) === true) {
+        actorData.data.resistance.silverR = actorData.data.resistance.silverR - 5;
+        actorData.data.resistance.diseaseR = actorData.data.resistance.diseaseR + 200;
+        actorData.data.hp.max = actorData.data.hp.max + 10;
+        actorData.data.stamina.max = actorData.data.stamina.max + 1;
+        actorData.data.speed.base = data.speed.base + 5;
+        data.speed.value = this._speedCalc(actorData);
+        data.speed.swimSpeed = (data.speed.value/2).toFixed(0);
+        actorData.data.resistance.natToughness = 5;
+        actorData.data.wound_threshold.base = actorData.data.wound_threshold.base + 5;
+        actorData.data.action_points.max = actorData.data.action_points.max - 1;
+        actorData.data.skills.survival.tn = actorData.data.skills.survival.tn + 30;
+        actorData.data.skills.navigate.tn = actorData.data.skills.navigate.tn + 30;
+        actorData.data.skills.observe.tn = actorData.data.skills.observe.tn + 30;
+    } else if (this._wereCrocodileForm(actorData) === true) {
+        actorData.data.resistance.silverR = actorData.data.resistance.silverR - 5;
+        actorData.data.resistance.diseaseR = actorData.data.resistance.diseaseR + 200;
+        actorData.data.hp.max = actorData.data.hp.max + 5;
+        actorData.data.stamina.max = actorData.data.stamina.max + 1;
+        actorData.data.speed.value = (this._addHalfSpeed(actorData)).toFixed(0);
+        actorData.data.speed.swimSpeed = parseFloat(this._speedCalc(actorData)) + 9;
+        actorData.data.resistance.natToughness = 5;
+        actorData.data.wound_threshold.base = actorData.data.wound_threshold.base + 5;
+        actorData.data.action_points.max = actorData.data.action_points.max - 1;
+        actorData.data.skills.survival.tn = actorData.data.skills.survival.tn + 30;
+        actorData.data.skills.navigate.tn = actorData.data.skills.navigate.tn + 30;
+        actorData.data.skills.observe.tn = actorData.data.skills.observe.tn + 30;
+    } else if (this._wereVultureForm(actorData) === true) {
+        actorData.data.resistance.silverR = actorData.data.resistance.silverR - 5;
+        actorData.data.resistance.diseaseR = actorData.data.resistance.diseaseR + 200;
+        actorData.data.hp.max = actorData.data.hp.max + 5;
+        actorData.data.stamina.max = actorData.data.stamina.max + 1;
+        actorData.data.speed.value = (this._speedCalc(actorData)/2).toFixed(0);
+        actorData.data.speed.flySpeed = actorData.data.speed.base + 9;
+        data.speed.swimSpeed = (data.speed.value/2).toFixed(0);
+        actorData.data.resistance.natToughness = 5;
+        actorData.data.wound_threshold.base = actorData.data.wound_threshold.base + 3;
+        actorData.data.action_points.max = actorData.data.action_points.max - 1;
+        actorData.data.skills.survival.tn = actorData.data.skills.survival.tn + 30;
+        actorData.data.skills.navigate.tn = actorData.data.skills.navigate.tn + 30;
+        actorData.data.skills.observe.tn = actorData.data.skills.observe.tn + 30;
+    } else if (this._vampireLordForm(actorData) === true) {
+        actorData.data.resistance.fireR = actorData.data.resistance.fireR - 1;
+        actorData.data.resistance.sunlightR = actorData.data.resistance.sunlightR - 1;
+        actorData.data.speed.flySpeed = 5;
+        actorData.data.hp.max = actorData.data.hp.max + 5;
+        actorData.data.magicka.max = actorData.data.magicka.max + 25;
+        actorData.data.resistance.natToughness = 3;
+    }
+
+    //Speed Recalculation
+    actorData.data.speed.value = this._addHalfSpeed(actorData);
+
+    //ENC Burden Calculations
+    if (data.current_enc > data.carry_rating.max * 3) {
+      data.speed.value = 0;
+      data.stamina.max = data.stamina.max - 5;
+    } else if (data.current_enc > data.carry_rating.max * 2) {
+      data.speed.value = Math.floor(data.speed.base / 2);
+      data.stamina.max = data.stamina.max - 3;
+    } else if (data.current_enc > data.carry_rating.max) {
+      data.speed.value = data.speed.value - 1;
+      data.stamina.max = data.stamina.max - 1;
+    }
+
+    //Armor Weight Class Calculations
+    if (data.armor_class == "super_heavy") {
+      data.speed.value = data.speed.value - 3;
+      data.speed.swimSpeed = data.speed.swimSpeed - 3;
+    } else if (data.armor_class == "heavy") {
+      data.speed.value = data.speed.value - 2;
+      data.speed.swimSpeed = data.speed.swimSpeed - 2;
+    } else if (data.armor_class == "medium") {
+      data.speed.value = data.speed.value - 1;
+      data.speed.swimSpeed = data.speed.swimSpeed - 1;
+    } else {
+      data.speed.value = data.speed.value;
+      data.speed.swimSpeed = data.speed.swimSpeed;
+    }
+
+    //Les critiques
+
+    //Wounded Penalties
+    let woundPen = -20;
+    data.woundPenalty = woundPen;
+
+    if (this._painIntolerant(actorData) === true) {
+      woundPen = -30;
+      data.woundPenalty = woundPen;
+    }
+
+    let halfWound = woundPen / 2;
+    let woundIni = -2;
+    let halfWoundIni = woundIni / 2;
+
+    if (data.wounded == true) {
+      if (this._halfWoundPenalty(actorData) === true) {
+        for (var skill in data.skills) {
+          data.skills[skill].tn = data.skills[skill].tn + halfWound;
+        }
+        for (var skill in data.magic_skills) {
+          data.magic_skills[skill].tn = data.magic_skills[skill].tn + halfWound;
+        }
+        for (var skill in data.combat_styles) {
+          data.combat_styles[skill].tn = data.combat_styles[skill].tn + halfWound;
+        }
+        data.initiative.value = data.initiative.base + halfWoundIni;
+        data.woundPenalty = halfWound;
+
+      } else if (this._halfWoundPenalty(actorData) === false) {
+        for (var skill in data.skills) {
+          data.skills[skill].tn = data.skills[skill].tn + woundPen;
+        }
+        for (var skill in data.magic_skills) {
+          data.magic_skills[skill].tn = data.magic_skills[skill].tn + woundPen;
+        }
+        for (var skill in data.combat_styles) {
+          data.combat_styles[skill].tn = data.combat_styles[skill].tn + woundPen;
+        }
+        data.initiative.value = data.initiative.base + woundIni;
+        data.woundPenalty = woundPen;
+      }
+    }
+
+    //Fatigue Penalties
+    if (data.stamina.value == -1) {
+      for (var skill in data.skills) {
+        data.fatigueLevel = -10;
+        data.skills[skill].tn = data.skills[skill].tn + this._halfFatiguePenalty(actorData);
+      }
+      for (var skill in data.magic_skills) {
+        data.fatigueLevel = -10;
+        data.magic_skills[skill].tn = data.magic_skills[skill].tn + this._halfFatiguePenalty(actorData);
+      }
+      for (var skill in data.combat_styles) {
+        data.fatigueLevel = -10;
+        data.combat_styles[skill].tn = data.combat_styles[skill].tn + this._halfFatiguePenalty(actorData);
+      }
+
+    } else if (data.stamina.value == -2) {
+        for (var skill in data.skills) {
+        data.fatigueLevel = -20;
+        data.skills[skill].tn = data.skills[skill].tn + this._halfFatiguePenalty(actorData);
+        }
+        for (var skill in data.magic_skills) {
+          data.magic_skills[skill].tn = data.magic_skills[skill].tn -20 + this._halfFatiguePenalty(actorData);
+          data.fatigueLevel = -20;
+        }
+        for (var skill in data.combat_styles) {
+          data.fatigueLevel = -20;
+          data.combat_styles[skill].tn = data.combat_styles[skill].tn + this._halfFatiguePenalty(actorData);
+        }
+
+    } else if (data.stamina.value == -3) {
+        for (var skill in data.skills) {
+        data.fatigueLevel = -30;
+        data.skills[skill].tn = data.skills[skill].tn + this._halfFatiguePenalty(actorData);
+        }
+        for (var skill in data.magic_skills) {
+          data.fatigueLevel = -30;
+          data.magic_skills[skill].tn = data.magic_skills[skill].tn + this._halfFatiguePenalty(actorData);
+        }
+        for (var skill in data.combat_styles) {
+          data.fatigueLevel = -30;
+          data.combat_styles[skill].tn = data.combat_styles[skill].tn + this._halfFatiguePenalty(actorData);
+        }
+
+    } else if (data.stamina.value == -4) {
+        for (var skill in data.skills) {
+        data.skills[skill].tn = 0;
+        }
+        for (var skill in data.magic_skills) {
+          data.magic_skills[skill].tn = 0;
+        }
+        for (var skill in data.combat_styles) {
+          data.combat_styles[skill].tn = 0;
+        }
+
+    } else if (data.stamina.value <= -5) {
+        for (var skill in data.skills) {
+        data.skills[skill].tn = 0;
+        }
+        for (var skill in data.magic_skills) {
+          data.magic_skills[skill].tn = 0;
+        }
+        for (var skill in data.combat_styles) {
+          data.combat_styles[skill].tn = 0;
+        }
+      }
+
+
+    //Worn Armor/Weapons to Actor Sheet
+    data.armor.head.ar = this._helmetArmor(actorData);
+    data.armor.head.magic_ar = this._helmetMagicArmor(actorData);
+
+    data.armor.l_arm.ar = this._larmArmor(actorData);
+    data.armor.l_arm.magic_ar = this._larmMagicArmor(actorData);
+
+    data.armor.r_arm.ar = this._rarmArmor(actorData);
+    data.armor.r_arm.magic_ar = this._rarmMagicArmor(actorData);
+
+    data.armor.l_leg.ar = this._llegArmor(actorData);
+    data.armor.l_leg.magic_ar = this._llegMagicArmor(actorData);
+
+    data.armor.r_leg.ar = this._rlegArmor(actorData);
+    data.armor.r_leg.magic_ar = this._rlegMagicArmor(actorData);
+
+    data.armor.body.ar = this._bodyArmor(actorData);
+    data.armor.body.magic_ar = this._bodyMagicArmor(actorData);
+
+    data.shield.br = this._shieldBR(actorData);
+    data.shield.magic_br = this._shieldMR(actorData);
+
+  } 
 
   _sortCarriedItems(actorData) {
     let carried = actorData.items.filter(item => item.data.hasOwnProperty("category"));
