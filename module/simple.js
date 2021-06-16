@@ -7,10 +7,10 @@
 // Import Modules
 import { SimpleActor } from "./actor.js";
 import { SimpleItem } from "./item.js";
-import { SimpleFamilier } from "./familier.js";
+//import { SimpleFamilier } from "./familier.js";
 import { SimpleItemSheet } from "./item-sheet.js";
 import { SimpleActorSheet } from "./actor-sheet.js";
-import { SimpleFamilierSheet } from "./familier-sheet.js";
+//import { SimpleFamilierSheet } from "./familier-sheet.js";
 import { npcSheet } from "./npc-sheet.js";
 
 /* -------------------------------------------- */
@@ -31,14 +31,14 @@ Hooks.once("init", async function() {
 
 	// Define custom Entity classes
   CONFIG.Actor.entityClass = SimpleActor;
-  CONFIG.Familier.entityClass = SimpleFamilier;
+  //CONFIG.Familier.entityClass = SimpleFamilier;
   CONFIG.Item.entityClass = SimpleItem;
 
   // Register sheet application classes
   Actors.unregisterSheet("core", ActorSheet);
   Actors.registerSheet("uesrpg-d100-modifie", SimpleActorSheet, {types: ["character"], makeDefault: true});
-  Familier.unregisterSheet("core", FamilierSheet);
-  Familier.registerSheet("uesrpg-d100-modifie", SimpleFamilierSheet, {types: ["familier"], makeDefault: true});
+  //Familier.unregisterSheet("core", FamilierSheet);
+ // Familier.registerSheet("uesrpg-d100-modifie", SimpleFamilierSheet, {types: ["familier"], makeDefault: true});
   Items.unregisterSheet("core", ItemSheet);
   Items.registerSheet("uesrpg-d100-modifie", SimpleItemSheet, {types: ["item", "armor", "weapon", "spell", "trait", "talent", "power", "combatStyle", "ammunition"], makeDefault: true});
   Actors.registerSheet("uesrpg-d100-modifie", npcSheet, {types: ["npc"], makeDefault: true});
