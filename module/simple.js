@@ -38,7 +38,7 @@ Hooks.once("init", async function() {
   Actors.unregisterSheet("core", ActorSheet);
   Actors.registerSheet("uesrpg-d100-modifie", SimpleActorSheet, {types: ["character"], makeDefault: true});
   Familier.unregisterSheet("core", FamilierSheet);
-  Familier.registerSheet("uesrpg-d100-modifie", SimpleFamilierSheet, {types: ["character"], makeDefault: true});
+  Familier.registerSheet("uesrpg-d100-modifie", SimpleFamilierSheet, {types: ["familier"], makeDefault: true});
   Items.unregisterSheet("core", ItemSheet);
   Items.registerSheet("uesrpg-d100-modifie", SimpleItemSheet, {types: ["item", "armor", "weapon", "spell", "trait", "talent", "power", "combatStyle", "ammunition"], makeDefault: true});
   Actors.registerSheet("uesrpg-d100-modifie", npcSheet, {types: ["npc"], makeDefault: true});

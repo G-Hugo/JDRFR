@@ -1061,7 +1061,7 @@
       
   },
   "Familier": {
-    "types": ["character"],
+    "types": ["familier"],
     "character": {
       "race": "",
       "age": "",
