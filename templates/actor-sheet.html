@@ -26,6 +26,7 @@
         <a class="item" data-tab="journal">Inventaire</a>
         <a class="item" data-tab="metier">Métier</a>
         <a class="item" data-tab="familier">Familier</a>
+        <a class="item" data-tab="familier2">Familier2</a>
     </nav>
 
     {{!-- Sheet Body --}}
@@ -157,13 +158,16 @@
             </div>
         </div>
 
-        {{!-- Metier Tab --}}
+        {{!-- Familier Tab --}}
         <div class="tab familier" data-group="primary" data-tab="familier">
             <h2 class="bioHeader">Mettez ici tous ce qui concerne le familier</h2>
             <div>
             {{editor content=data.familier target="data.familier" button=true owner=owner editable=editable}}
             </div>
         </div>
+
+        {{!-- Familier2 Tab --}}
+        
 
         {{!-- Owned Items Tab --}}
         

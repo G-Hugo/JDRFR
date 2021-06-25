@@ -970,17 +970,12 @@ export class SimpleActor extends Actor {
     const data = actorData.data;
 
     //Characteristic Bonuses
-    var strBonus = Math.floor(data.characteristics.str.value / 10);
     var forBonus = Math.floor(data.characteristics.for.value / 10);
     var endBonus = Math.floor(data.characteristics.end.value / 10);
     var agiBonus = Math.floor(data.characteristics.agi.value / 10);
     var intBonus = Math.floor(data.characteristics.int.value / 10);
-    var wpBonus = Math.floor(data.characteristics.wp.value / 10);
-    var prcBonus = Math.floor(data.characteristics.prc.value / 10);
     var perBonus = Math.floor(data.characteristics.per.value / 10);
-    var prsBonus = Math.floor(data.characteristics.prs.value / 10);
     var socBonus = Math.floor(data.characteristics.soc.value / 10);
-    var lckBonus = Math.floor(data.characteristics.lck.value / 10);
 
     //Talent/Power/Trait Resource Bonuses
     data.hp.bonus = this._hpBonus(actorData);

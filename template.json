@@ -1064,6 +1064,7 @@
       "age": "",
       "bio": "",
       "journal": "",
+      "proprietaire": "",
       "passif": "",
       "amureP": "",
       "amureM": "",
@@ -1103,12 +1104,6 @@
           "modifieur": 0,
           "favored": false,
           "name": "PER"
-        },
-        "prs": {
-          "value": 0,
-          "modifieur": 0,
-          "favored": false,
-          "name": "PRS"
         },
         "soc": {
           "value": 0,
