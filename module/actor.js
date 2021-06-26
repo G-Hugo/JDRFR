@@ -11,6 +11,16 @@ export class SimpleActor extends Actor {
     const data = actorData.data;
     const flags = actorData.flags;
 
+
+
+    let proprio = actorData.data.name;
+    let perso = game.data.actors;
+    for (let i = 0; i < familier.length; i++){
+      if(perso[i].type === "familier" && perso[i].data.proprietaire === proprio){
+
+      }
+    }
+
     // Make separate methods for each Actor type (character, npc, etc.) to keep
     // things organized.
     if (actorData.type === 'character') this._prepareCharacterData(actorData);

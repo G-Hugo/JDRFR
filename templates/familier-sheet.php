@@ -9,7 +9,7 @@
             </div>
             <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="Name"/></h1>
             <div class="resources">
-                <label class="resource-label" >ღPoint de vieღ</label><p>
+                <label class="resource-label" >Point de vie</label><p>
                 <input class="resource-hp" type="text" name="data.hp.value" value="{{data.hp.value}}" data-dtype="Number"/>
                 <span>-</span>
                 <input class="resource-hp-max" type="text" name="data.hp.max" value="{{data.hp.max}}" data-dtype="Number"/>
@@ -99,19 +99,6 @@
                 </div>
             </div>
         </div>
-
-        {{!-- Skills Tab --}}
-        
-
-        {{!-- Combat Tab --}}
-        
-
-        {{!-- Spells Tab --}}
-        
-
-        {{!-- Talents Tab --}}
-        
-
 
         {{!-- Magie Tab --}}
         <div class="tab magie" data-group="primary" data-tab="magie">
