@@ -11,6 +11,7 @@ export class SimpleActor extends Actor {
     const data = actorData.data;
     const flags = actorData.flags;
 
+    console.log(actorData);
 
 
     let proprio = actorData.data.name;

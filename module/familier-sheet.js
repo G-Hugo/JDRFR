@@ -8,7 +8,7 @@
       static get defaultOptions() {
         return mergeObject(super.defaultOptions, {
           classes: ["worldbuilding", "sheet", "actor", "familier"],
-          template: "systems/uesrpg-d100-modifie/templates/familier-sheet.php",
+          template: "systems/uesrpg-d100-modifie/templates/familier-sheet.html",
         width: 600,
         height: 600,
         tabs: [{navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "description"}],
