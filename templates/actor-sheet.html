@@ -23,7 +23,7 @@
     </nav>
     <script>
         genNavJoueurs();
-        
+
         function genNavJoueurs(){
         let onglets = [];
         onglets.push({"data-tap" : "core", "txt" : "Information"});
@@ -36,7 +36,7 @@
         let name = document.getElementById("name").value;
         if (name == "Flora Al'Asar"){
             onglets.push({"data-tap" : "familier", "txt" : "Familier"});
-            onglets.push({"data-tap" : "familier2", "txt" : "Familier2"});
+            /*onglets.push({"data-tap" : "familier2", "txt" : "Familier2"});*/
         }
         onglets.forEach(onglets => {
            console.log(onglets); 
@@ -174,12 +174,12 @@
         </div>
 
         {{!-- Familier Tab --}}
-        <div class="tab familier" data-group="primary" data-tab="familier">
+       <!-- <div class="tab familier" data-group="primary" data-tab="familier">
             <h2 class="bioHeader">Mettez ici tous ce qui concerne le familier</h2>
             <div>
             {{editor content=data.familier target="data.familier" button=true owner=owner editable=editable}}
             </div>
-        </div>
+        </div>-->
 
         {{!-- Familier2 Tab --}}
         
