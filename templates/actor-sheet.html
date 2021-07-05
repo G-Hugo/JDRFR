@@ -18,23 +18,28 @@
     </header>
 
     {{!-- Sheet Tab Navigation --}}
-    <nav class="sheet-tabs tabs" data-group="primary">
-        <a class="item" data-tab="core">Information</a>
-        <a class="item" data-tab="magie">Magie</a>
-        <a class="item" data-tab="passif">Passif</a>
-        <a class="item" data-tab="equipement">Equipement</a>
-        <a class="item" data-tab="journal">Inventaire</a>
-        <a class="item" data-tab="metier">Métier</a>
-        <script>
-           // console.log(this.data.data.name)
+    <nav id="navigationJoueur" class="sheet-tabs tabs" data-group="primary">
+       <!-- <a class="item" data-tab="core">Information</a>-->
+    </nav>
+    <script>
+        let onglets = [];
+        onglets.push({"data-tap" : "core", "txt" : "Information"});
+        onglets.push({"data-tap" : "magie", "txt" : "Magie"});
+        onglets.push({"data-tap" : "passif", "txt" : "Passif"});
+        onglets.push({"data-tap" : "equipement", "txt" : "Equipement"});
+        onglets.push({"data-tap" : "journal", "txt" : "Inventaire"});
+        onglets.push({"data-tap" : "metier", "txt" : "Métier"});
+
         let name = document.getElementById("name").value;
         if (name == "Flora Al'Asar"){
-        '<a class="item" data-tab="familier">Familier</a>'
-        '<a class="item" data-tab="familier2">Familier2</a>'
+            onglets.push({"data-tap" : "familier", "txt" : "Familier"});
+            onglets.push({"data-tap" : "familier2", "txt" : "Familier2"});
         }
+        onglets.forEach(onglets => {
+           console.log(onglets); 
+        });
         </script>
-    </nav>
-
+        
     {{!-- Sheet Body --}}
     <section class="sheet-body">
 
