@@ -22,6 +22,9 @@
        <!-- <a class="item" data-tab="core">Information</a>-->
     </nav>
     <script>
+        genNavJoueurs();
+        
+        function genNavJoueurs(){
         let onglets = [];
         onglets.push({"data-tap" : "core", "txt" : "Information"});
         onglets.push({"data-tap" : "magie", "txt" : "Magie"});
@@ -38,8 +41,9 @@
         onglets.forEach(onglets => {
            console.log(onglets); 
         });
+    }
         </script>
-        
+
     {{!-- Sheet Body --}}
     <section class="sheet-body">
 
